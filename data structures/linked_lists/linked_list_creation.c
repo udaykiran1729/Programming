@@ -76,16 +76,59 @@ void add_head()
     head=newnode;
 }
 //not completed
-void insert()
+void insert_d()
 {
     int value,n;
-    printf("enter the position:");
-    scanf("%d",&value);
+    temp=head;
     printf("enter the position:");
     scanf("%d",&n);
+    printf("enter the value:");
+    scanf("%d",&value);
+    newnode=(struct node*)malloc(sizeof(struct node));
+    for (int i=0;i<n-1;i++)
+    {
+        temp=temp->next;
+    }
+    newnode->data=value;
+    newnode->next=temp->next;
+    temp->next=newnode;
     
 }
 //not completed
+
+
+void delete_begin()
+{
+    temp=head;
+    head=temp->next;
+
+}
+
+void delete_end()
+{
+    temp=head;
+    while (temp->next!=tail)
+    {
+        temp=temp->next;
+    }
+    temp->next=NULL;
+    tail=temp;
+}
+
+void delete_d()
+{
+
+    int pos;
+    temp=head;
+    printf("enter the position to be deleted:");
+    scanf("%d",&pos);
+    for (int i=0;i<pos-1;i++)
+    {
+        temp=temp->next;
+    }
+    temp->next=temp->next->next;
+
+}
 
 
 void main()
@@ -96,8 +139,21 @@ void main()
     add_end();
     printf("after inserting at end:\n");
     disp();
+    printf("inserting at beginning:");
     add_head();
+    disp();
+    printf("insertion at desired position:\n");
+    insert_d();
+    disp();
     printf("adding at head:\n");
     disp();
-
+    printf("deleting at begining:\n");
+    delete_begin();
+    disp();
+    printf("deleting at end:\n");
+    delete_end();
+    disp();
+    printf("deleting at desired position:\n \n");
+    delete_d();
+    disp();
 }

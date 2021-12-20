@@ -22,6 +22,6 @@ public class practice {
         System.out.println("date is"+date.toString());
         SimpleDateFormat ft=new SimpleDateFormat("E yyyy.MM.dd 'at' hh.mm.ss a zzz");
         System.out.println("current date:"+ft.format(date));
-
+        
     }
 }

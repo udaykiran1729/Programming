@@ -3,7 +3,7 @@
 struct node{
     int data;
     struct node* next;
-}*temp,*newnode;
+}*temp,*newnode,*temp1,*temp2;
 
 struct node* head=NULL;
 struct node* tail=NULL;
@@ -53,51 +53,35 @@ void disp_1(){
         printf(" %d \n",temp->data);
         temp=temp->next;
     }
-    printf(" %d",temp->data);
+    printf(" %d\n",temp->data);
 }
 
-void reverse()
+void rev()
 {
-    
-    /*temp=tail;
-    while(temp->next!=tail)
+    temp1=head;
+    while(temp1->next!=NULL)
     {
-        if (head1==NULL)
+        temp2=head;
+        while(temp2->next!=NULL)
         {
-            head1=temp;
-            tail1=temp;
+            temp2=temp2->next;
         }
-        else
-        {
-            tail1->next=temp;
-            tail1=temp;
-            tail1->next=NULL;
-        }
-        printf("%d")
-    }*/
-    //printf("%d",temp->data);
+        /*printf("%d\n",temp2->data);
+        temp2->next=NULL;
+        tail=temp2;
+        temp1=temp1->next;*/
 
-    //temp=tail;
-    while(temp->next!=head)
-    {
-        temp=tail;
         if (head1==NULL)
         {
-            head1=temp;
-            tail1=temp;
+            head1=temp2;
+            tail1=temp2;
         }
         else{
-            tail1->next=temp;
-            tail1=temp;
-            temp=head;
-            while (temp->next!=tail)
-            {
-                temp=temp->next;
-            }
-            temp->next=NULL;
-            tail=temp;
-
+            tail1->next=temp2;
+            tail1=temp2;
         }
+
+        temp1=temp1->next;
 
     }
 }
@@ -107,6 +91,6 @@ void main()
     create();
     //printf("123\n");
     disp();
-    reverse();
+    rev();
     disp_1();
 }

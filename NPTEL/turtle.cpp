@@ -1,16 +1,15 @@
 #include<iostream>
 using namespace std;
-//#include<simplecpp>
-int main()
-4[{
-    cout<<"hello world\n";
-    int n;
-    cout<<"enter the no of sides:";
-    cin>>n;
-    while(n>0)
+main()
+{
+    int m,n;
+    cin>>m;
+    for (int i=0;i<m;i++)
     {
-    cout<<"the number is:%d\n",n;
-        n--;
+        cout<<'*'<<endl;
     }
-    return 0;
+    for (int i=0;i<m+1;i++)
+    {
+        cout<<'*';
+    }
 }

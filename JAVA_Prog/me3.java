@@ -12,7 +12,6 @@ public class me3 {
         if (sal>500)
         {
             sal+=500;
-            
         }
         return (sal);
     }

@@ -1,7 +1,8 @@
-class Testbox{
+import java.lang.Math.*;
+import static java.lang.System.*;
+public class Testbox{
     public static void main(String args[]){
-        char a='8';
-        int b=010;
-        System.out.println(a+b);
+        //System.out.println(cos(3*PI));
+        out.println("java");
     }
 }

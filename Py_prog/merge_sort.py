@@ -4,7 +4,7 @@ m=int(input('enter the length of first list:'))
 n=int(input('enter the length of second list:'))
 
 l1=[int(input('enter the element-a:')) for x in range(m)]
-l1.sort()
+l1.+()
 
 l2=[int(input('enter the element-b:')) for x in range(n)]
 l2.sort()

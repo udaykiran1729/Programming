@@ -1,5 +1,5 @@
 #include<stdio.h>
-int a[10],front=0,rear=0,c=0,n;
+int a[5],front=0,rear=0,c=0,n=5;
 
 void insert(int item){
     if (c==10){
@@ -26,26 +26,26 @@ void del(){
 
 void disp(){
     int temp=0,i=front;
-    if (front<=rear){
-        while(temp<n){
+    //if (front<=rear){
+        while(temp<c){
             printf("%d \n",a[i]);
             temp++;
             i=(i+1)%n;
         }
-    }
-    else{
+    //}
+    /*else{
         i=rear;
-        while(temp<n){
+        while(temp<c){
             printf("%d \n",a[i]);
             temp++;
             i=(i+1)%n;
         }
-    }
+    }*/
 }
 
 int main(){
-    printf("enter the length of queue:");
-    scanf("%d",&n);
+    /*printf("enter the length of queue:");
+    scanf("%d",&n);*/
     int item;
     /*for (int i=0;i<n;i++){
         
@@ -79,6 +79,7 @@ int main(){
             break;
         }
         printf("continue.....(y)");
+        getchar();
         scanf("%c",&cho);
     }while(cho!='n');
 }

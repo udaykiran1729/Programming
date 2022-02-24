@@ -59,7 +59,7 @@ int main(){
     do{
         int d;
         
-        printf("enter the choice:\n1.insert\n2.delete\n3.delete\n");
+        printf("enter the choice:\n1.insert\n2.delete\n3.display\n");
         scanf("%d",&d);
         switch (d)
         {

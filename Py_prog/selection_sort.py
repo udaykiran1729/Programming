@@ -1,6 +1,5 @@
 #from zmq import SWAP
 
-
 n=int(input('enter the length:'))
 #l=list(range(500,1,-1))
 l=[int(input("enter the list:")) for x in range(n)]

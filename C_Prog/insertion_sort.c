@@ -1,4 +1,10 @@
 #include<stdio.h>
+void disp(int a[],int l){
+    for (int i=0;i<l;i++){
+        printf("%d  ",a[i]);
+    }
+}
+
 int main()
 {
     int i,l,j,n,mid,key;
@@ -12,6 +18,9 @@ int main()
         printf("enter the element:");
         scanf("%d",&a[i]);
     }
+    printf("the aray is \n");
+    disp(a,l);
+
     mid=l/2;
     for (i=1;i<l;i++)
     {
@@ -24,9 +33,11 @@ int main()
         }
         a[j+1]=key;
     }
-    for (i=0;i<l;i++)
+    printf("\nthe elements are:\n");
+    disp(a,l);
+    /*for (i=0;i<l;i++)
     {
         printf("%d \n",a[i]);
-    }
+    }*/
     return 0;
 }

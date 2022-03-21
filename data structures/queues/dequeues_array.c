@@ -135,7 +135,7 @@ int main(){
         /*printf("enter the choice");
         scanf("%d",&n1);*/
         while(choice!=0){
-                printf("enter the choice:\n1.insert_front\n2.insert_rear\n3.delete_rear\n4.delete_front\n5.display\n6.display-2");
+                printf("enter the choice:\n1.insert_front\n2.insert_rear\n3.delete_rear\n4.delete_front\n5.display\n6.display-2\n");
                 scanf("%d",&n1);
                 switch(n1){
                         case 1:
@@ -157,7 +157,7 @@ int main(){
                         case 5:
                                 disp();
                                 printf("\n");
-                                disp2();
+                                //disp2();
                                 break;
                         
                         default:printf("enter the correct choice");

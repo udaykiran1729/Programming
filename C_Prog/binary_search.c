@@ -19,9 +19,9 @@ int main()
         while (a[j]!=a[i] && j<l)
         {
             a[i]=a[j];
-
+            j=j-1;
         }
-        a[i]=key;
+        a[j]=key;
     }
     for (i=0;i<l;i++)
     {

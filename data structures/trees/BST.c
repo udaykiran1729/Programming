@@ -5,11 +5,11 @@ struct node{
     struct node* prev;
     int data;
     struct node* next;
-}*new,*temp;
+}*new,*temp,*temp1;
 
-struct node* root=NULL;
-
-void traverse(struct node* root,int item){
+struct node* head=NULL;
+struct node* tail=NULL;
+struct node* traverse(struct node* root,int item){
     temp=root;
     if (temp==NULL){
         temp->prev->next=new;
@@ -29,16 +29,14 @@ void insert(int item){
     new->data=item;
     new->prev=NULL;
     new->next=NULL;
-    if (root==NULL){
-        root=new;
+    if (head==NULL){
+        head=new;
+        tail=new;
     }
     else{
-        if (root->data>item){
-            traverse(root->next,item);
-        }
-        else{
-            traverse(root->prev,item);
-        }
+        new=traverse(head,item);
+        tail->next=new;
+        tail=new;
     }
 }
 
@@ -60,6 +58,6 @@ int main(){
         insert(item);
     }
     printf("inorder expression is:\n");
-    inorder(root);
+    inorder(head);
     return 0;
 }

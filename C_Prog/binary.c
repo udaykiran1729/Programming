@@ -5,13 +5,13 @@ int main()
     printf("enter the length of array:");
     scanf("%d",&l);
     int a[l];
-    printf("enter the element:");
-    scanf("%d",&n);
     for (int i=0;i<l;i++)
     {
         printf("enter the element:");
         scanf("%d",&a[i]);
     }
+    printf("enter the element to search:");
+    scanf("%d",&n);
     int mid=l/2;
     while (mid>0 && mid<l)
     {

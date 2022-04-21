@@ -14,7 +14,7 @@ struct node* tail=NULL;
 void create()
 {
     int i=0;
-    while(i<5){
+    while(i<4){
     newnode=(struct node*)malloc(sizeof(struct node));
     int d;
     printf("enter the data:");
@@ -100,10 +100,11 @@ void insert_d()
         temp=temp->after;
     }
     newnode->data=d;
-    newnode->before=temp;
-    newnode->after=temp->after;
-    temp->after=newnode;
-    temp->after->before=newnode;
+    temp->before->after=newnode;
+    newnode->after=temp;
+    newnode->before=temp->before;
+    temp->before=newnode;
+
 }
 
 void del_b()
@@ -144,6 +145,7 @@ void main()
     printf("1.creation and display\n2.insertion at beggining\n3.insertion at end\n4.insertion at desired\n5.deletion at beggining\n6.deletion at end\n7.deletion at desired\n");
     int n;
     scanf("%d",&n);
+    do{
     switch (n){
         case 1:
     create();
@@ -181,4 +183,7 @@ void main()
     break;
     default:printf("enter choice correctly");
     }
+    printf("choice:");
+    scanf("%d",&n);
+    }while(n>=0);
 }

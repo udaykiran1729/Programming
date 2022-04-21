@@ -123,12 +123,12 @@ int main(){
 #include<stdio.h>
 #include<string.h>
 
-char a[20];
+char a[30];
 
 int top=-1;
 
 void push(char item){
-        if (top>20){
+        if (top>30){
                 printf("STAK OVERFLOW");
         }
         else{
@@ -219,11 +219,12 @@ int main(){
 
                 }
                 else if(ch[i]==')'){
-                        char x;
-                        while(x=pop()!='('){
+                        char x=pop();
+                        while(x!='('){
                                 printf("%c",x);
+                                x=pop();
                         }
-                        x=pop();
+                        //x=pop();
                 }
         }
         //printf("\n\n\n");

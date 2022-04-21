@@ -85,7 +85,7 @@ void insert_d()
     printf("enter the value:");
     scanf("%d",&value);
     newnode=(struct node*)malloc(sizeof(struct node));
-    for (int i=0;i<n-1;i++)
+    for (int i=1;i<n-1;i++)
     {
         temp=temp->next;
     }

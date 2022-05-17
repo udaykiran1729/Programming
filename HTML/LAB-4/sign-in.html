@@ -22,28 +22,47 @@
                 border:2px;
                 cursor:pointer;
             }
-            button:hover,#remember{
+            button:hover,#remember:hover{
                 background-color: rgb(196, 255, 254,0.5);
                 border-color: rgb(135, 237, 238);
+                transform: scale3d(1.2,1.2,2);
             }
-        
+            
+            /* body{
+                position: relative;
+                animation-name: anime;
+                animation-duration: 5s;
+                animation-fill-mode:backwards;
+                
+                animation-iteration-count:50;
+
+            }
+            @keyframes anime{
+                0%{background-image:radial-gradient( #5dceff, #59c9fe, #7cd4fe, #9bdffd, #b7e9fe)}
+                25%{background-image: radial-gradient( #5d8eff, #5ea5c6, #e2f49c, #35393b, #b065fb)}
+                50%{background-image:linear-gradient(from right, #5dceff, #59c9fe, #7cd4fe, #9bdffd, #b7e9fe)}
+                100%{background-image:linear-gradient( #dfb323, #919076a9, #d3a79c, #f8626f, #33a130);}
+            } */
+
         </style>
     </head>
 
-    <body background="regback.png">
-        <h1 style="text-align:center;">SIGN IN</h1>
-        <fieldset >
+    <body style="background-image: radial-gradient( #5dceff, #59c9fe, #7cd4fe, #9bdffd, #b7e9fe);">
+        <h1 style="text-align:center;">SIGN IN<hr><br></h1>
+        <form>
+        <fieldset>
             
         <br><br>
         <label for="username" >USERNAME</label>
-        <input name="username" id="username" type="text"><br><br>
+        <input name="username" id="username" type="text"  placeholder="username" required><br><br>
         <label for="password" >PASSWORD</label>
-        <input name="password" type="password"><br><br>
+        <input name="password" type="password" placeholder="password" required><br><br>
         <br>
-        <input type="checkbox" name="remember" id="remember">Remember me<br><br>
+        <input type="checkbox" name="remember" id="remember" >Remember me<br><br>
         <a href="mainpage.html"><button>sign in</button></a>
         <h5>Don't have an account,<a href="register.html" target="_blank">create one</a></h5>
     </fieldset>
+</form>
     </body>
 
 </html>

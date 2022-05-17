@@ -9,8 +9,9 @@
         fieldset {
             
             display: block;
-            margin-left: 500px;
-            margin-right: 500px;
+            margin-left: 500px ;
+            margin-right: 500px ;
+            /* margin: auto; */
             padding: 10px;
             border: 2px groove;
             border-radius: 20px;
@@ -46,27 +47,28 @@
     </style>
 </head>
 
-<body background="regback.png">
-    <h1 style="text-align: center;">Create Account</h1>
+<body background="regback.png" >
+    <h1 style="text-align: center;">Create Account<hr style="border: 1px solid whitesmoke;"><br></h1>
     <fieldset >
 
         <br>
         <label for="userid">USER ID</label><br>
-        <input name="userid" type="text" id="inputs"><br><br>
+        <input name="userid" type="text" id="inputs" placeholder="user id" required><br><br>
         <label for="email">EMAIL ID</label><br>
-        <input name="email" type="email" id="inputs"><br><br>
+        <input name="email" type="email" id="inputs" placeholder="XYZ@gmail.com" required><br><br>
         <label for="gender">GENDER:</label>
-        <select>
+        <select required>
+            <option value="gen" selected disabled>Gender</option>
             <option value="male">Male</option>
             <option value="female">Female</option>
             <option value="others">Others</option>
         </select><br><br>
         <label for="password">ENTER A PASSWORD</label><br>
-        <input name="password" type="password" id="inputs"><br><br>
+        <input name="password" type="password" id="inputs" required><br><br>
         <label for="repassword">RE-ENTER THE PASSWORD</label><br>
         <input name="repassword" type="password" id="inputs"><br><br>
-        <input type="checkbox" id="term">I agree to all the <a
-            href="https://sellercentral.amazon.in/gp/help/external/200672320">Terms and Conditions</a><br><br>
+        <input type="checkbox" id="term" required>I agree to all the <a
+            href="https://sellercentral.amazon.in/gp/help/external/200672320" target="_blank">Terms and Conditions</a><br><br>
         <a href="sign-in.html" target="_self"><button class="center">submit</button></a>
     </fieldset>
 </body>

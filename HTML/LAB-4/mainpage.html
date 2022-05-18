@@ -5,7 +5,7 @@
         <title>
             mainpage
         </title>
-        
+        <script type="text/javascript" src="jqery.js"></script>
         <style>
             
             table{
@@ -45,7 +45,9 @@
         <button>Search</button>
     </h4>
         <table>
-           
+           <script src="mainpage_button.js">
+           </script>
+           <form action="payment.html">
             <tr style="background-color: rgb(66, 215, 248,0.2);">
                 <th>S.no</th>
                 <th>Name of the book</th>
@@ -61,33 +63,33 @@
 
             <tr>
                 <td>1.</td>
-                <td>The Book Thief</td>
+                <td id="book">The Book Thief</td>
                 <td><img src="book-1.jpg"></td>
                 <td>Markus Zusak</td>
                 <td>R publications</td>
                 <td>Maithili Book Store,Vijayawada</td>
                 <TD>4.2(12,233 reviews)</TD>
                 <td>Rs.539</td>
-                <td>Available</td>
-                <td><a href="payment.html"><button>Buy</button></a></td>
+                <td id="availability">Available</td>
+                <td><button type="submit">Buy</button></a></td>
             </tr>
 
             <tr>
                 <td>2.</td>
-                <td>The Girl in Room 105</td>
+                <td id="book">The Girl in Room 105</td>
                 <td><img src="book-2.jpg"></td>
                 <td>Chetan Bhagat</td>
                 <td>D publications</td>
                 <td>Vivekananda Book Store,Guntur</td>
                 <TD>3.6(9,513 reviews)</TD>
                 <td>Rs.239</td>
-                <td>Available</td>
-                <td><a href="payment.html"><button>Buy</button></a></td>
+                <td id="availability">Available</td>
+                <td><button type="submit">Buy</button></a></td>
             </tr>
 
             <tr>
                 <td>3.</td>
-                <td>One Night @ Call Center</td>
+                <td id="book">One Night @ Call Center</td>
                 <td><img src="book-3.jpg" width="85"></td>
                 <td>Chetan Bhagat</td>
                 <td>Ruby publications</td>
@@ -95,10 +97,11 @@
                 <TD>4.0(5,034 reviews)</TD>
                 <td>Rs.259</td>
                 <td style="color: red;">Unavailable</td>
-                <td><a href="payment.html"><button>Buy</button></a></td>
+                <td><button type="submit">Buy</button></td>
             </tr>
 
         </table>
+    </form>
     </body>
 
 </html>

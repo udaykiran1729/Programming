@@ -6,6 +6,7 @@
         <title>
             payment
         </title>
+        <script type="text/javascript" src="jqery.js"></script>
         <style>
             fieldset{
                 background-color: whitesmoke;
@@ -48,7 +49,9 @@
     <body >
         <h1 style="text-align:center;">Inorder Form
         <hr><br></h1>
-        <form action="succcess.js">
+        
+        <form>
+            
         <fieldset>
             <legend>Coustumer Details</legend><br>
 
@@ -103,6 +106,15 @@
             <input type="number" name="credit" required></h4>
             <label for="amount"><h4>Enter The Amount </label>
             <input for="amount" type="number" required></h4>
+            <script>
+                $(document).ready(function(){
+                    $("button").click(function()
+                    {
+                        alert("your order is placed suceesfully");
+                    });
+                }
+                );
+            </script>
             <button type="submit">Pay</button>
         </fieldset>
     </form>

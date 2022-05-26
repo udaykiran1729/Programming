@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>
+            payment
+        </title>
+        <script type="text/javascript" src="jqery.js"></script>
+        <style>
+            fieldset{
+                background-color: whitesmoke;
+                border-radius:4px;
+                padding: 20px;
+                text-align: justify;
+                font-weight: bold;
+                padding: 20px;
+            }
+
+            legend{
+                background-color: gray;
+                color:rgb(255, 255, 255);
+                text-align: center;
+            }
+            table,td{
+                margin: 5px;
+                padding:20px;
+                text-align: justify;
+                
+            }
+            button{
+                background-color: rgb(255, 233, 109);
+                /*background-clip: border-box;*/
+            }
+            button:hover{
+                background-color: rgba(250, 235, 148, 0.899);
+                cursor: pointer;
+            }
+            input{
+                
+                margin-left: 10px;
+            }
+            body{
+                background-color: rgba(160, 237, 242, 0.1);
+            }
+        </style>
+    </head>
+
+    <body >
+        <h1 style="text-align:center;">Inorder Form
+        <hr><br></h1>
+        
+        <form>
+            
+        <fieldset>
+            <legend>Coustumer Details</legend><br>
+
+                    <label for="name">Enter Your Name</label>
+                    <input name="name" type="text" placeholder="Enter name"  required><br><br>
+                    <label for="mobile">Enter Your Mobile Number</label>
+                    <input for="mobile" type="tel" placeholder="Enter mobile  requirednumber" required><br><br>
+                    <label for="address">Enter Your Delivery Address</label>
+                    <input name="address" type="text" placeholder="Enter postal  requiredaddress" required><br><br>
+                    <label for="city">City/District name</label>
+                    <input name="city" type="text" placeholder="city/district required" required><br><br>
+                    <label for="state">Select State</label>
+                    <select name="state" title="select state" required>
+                    <option value="sel" selected disabled>SELECT STATE</option>
+                    <option value="AP">Andhra Pradesh</option>
+                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                    <option value="Assam">Assam</option>
+                    <option value="Bihar">Bihar</option>
+                    <option value="Chhattisgarh	">Chattisgarh</option>
+                    <option value="Goa">Goa</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Haryana">Haryana</option>
+                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                    <option value="Jharkhand">Jharkhand</option>
+                    <option value="Karnataka">Karnataka</option>
+                    <option value="Kerala">Kerala</option>
+                    <option value="Madhya Pradesh">Madhya Pradesh</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Manipur">Manipur</option>
+                    <option value="Meghalaya">Meghalaya</option>
+                </select><br><br>
+                    
+                </tr>
+        </table>
+
+        </fieldset>
+    
+        <br><br><br><br>
+        <fieldset>
+            <legend>Order Details</legend>
+            <label for="name" >Book Name </label>
+            <input name="name" type="text" placeholder="Book Name" required ><br><br>
+            <label for="qnty">Enter Quantity</label>
+            <input name="qnty" type="number" placeholder="No of Copies" required ><br><Br>
+            <label for="amount">Total amount</label>
+            <input name="amount" type="number" placeholder="Total amount" required>
+        </fieldset>
+        <br><br><br><br>
+        <fieldset>
+            <legend>Payent Details</legend>
+            <label for="credit"><h4>Credit/Debit Card Number </label>
+            <input type="number" name="credit" required></h4>
+            <label for="amount"><h4>Enter The Amount </label>
+            <input for="amount" type="number" required></h4>
+            <script>
+                $(document).ready(function(){
+                    $("button").click(function()
+                    {
+                        alert("your order is placed suceesfully");
+                    });
+                }
+                );
+            </script>
+            <button type="submit">Pay</button>
+        </fieldset>
+    </form>
+    </body>
+
+</html>

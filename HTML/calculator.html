@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <script>
+            function dis(val){
+                document.getElementById("result").value+=val;
+            }
+            function clr(){
+                document.getElementById("result").value;
+            }
+            /* function key(KeyboardEvent){
+                document.value+=KeyboardEvent
+            } */
+            function res(){
+                let exp=document.getElementById("result").value;
+                let re=eval(exp);
+                document.getElementById("result").value+="="+re;
+            }
+            function back(){
+                let exp=document.getElementById("result").value;
+                document.getElementById("result").value=exp.slice(0,exp.length-1);
+            }
+        </script>
+        <title>project Ca</title>
+        
+    </head>
+
+    <style>
+        fieldset{
+           /*  margin-top: 200px; */
+            margin-left: 400px;
+            margin-right: 400px;
+            text-align: center;
+            
+        }
+        input{
+            /* margin-right: 20px;
+            padding: 10px;
+            border-right: 20px solid black ; */
+            padding: 10px;
+        }
+        th,td{
+            padding: 6px;
+        } 
+     table{
+            margin-top: 20px;
+            margin-left:280px;
+            margin-right: 280px ;
+            margin-bottom: 100px;   
+        }
+     /* table,th,td{
+            border: 2px solid black;
+    }*/
+
+            
+        
+</style>
+
+    <body style="background-image: linear-gradient(to left top,#898c73, #978e6d, #a98e69, #bc8d6b, #d08a73, #d89272, #df9b70, #e5a46f, #d0be70, #b1d78b, #89ebba, #5ffbf3);background-size: cover;background-repeat: no-repeat;">
+        
+        <h1 style="text-align: center;">Calculator</h1>
+        
+        <fieldset>
+        <input type="text" id="result" style="margin-top: 100px;"><br>
+        <table>
+            <tr>
+                
+                    <td><input type="button" value="1" onclick="dis('1')"></td>
+                    <td><input type="button" value="2" onclick="dis('2')"></td>
+                    <td><input type="button" value="3" onclick="dis('3')"></td>
+                    <td><input type="button" value="+" onclick="dis('+')"></td>
+                
+            </tr>
+
+            <tr>
+                    <td><input type="button" value="4" onclick="dis('4')"></td>
+                    <td><input type="button" value="5" onclick="dis('5')"></td>
+                    <td><input type="button" value="6" onclick="dis('6')"></td>
+                    <td><input type="button" value="-" onclick="dis('-')"></td>
+                
+            </tr>
+
+            <tr>
+                    <td><input type="button" value="7" onclick="dis('7')"></td>
+                    <td><input type="button" value="8" onclick="dis('8')"></td>
+                    <td><input type="button" value="9" onclick="dis('9')"></td>
+                    <td><input type="button" value="*" onclick="dis('*')"></td>
+                
+            </tr>
+
+            <tr>
+                    <td><input type="button" value="=" onclick="res()"></td>
+                    <td><input type="button" value="0" onclick="dis('0')"></td>
+                    <td><input type="button" value="c" onclick="clr()"></td>
+                    <td><input type="button" value="<" onclick="back()"></td>
+            </tr>
+    </table>
+</fieldset>
+</body></html>

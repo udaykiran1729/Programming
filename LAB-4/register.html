@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>REGISTER PAGE
+    </title>
+    <style>
+        fieldset {
+            
+            display: block;
+            margin-left: 500px ;
+            margin-right: 500px ;
+            /* margin: auto; */
+            padding: 10px;
+            border: 2px groove;
+            border-radius: 20px;
+            background-color: rgb(239, 246, 250,0.5);
+            
+
+        }
+
+        button,#term {
+            cursor: pointer;
+            padding: 5px;
+            display: flexbox;
+            border: 2px groove;
+            border-radius: 5px;
+        }
+        button:hover,a:hover{
+            background-color: rgb(196, 255, 254,0.5);
+            border-color: rgb(135, 237, 238);
+        }
+        .center {
+            
+            justify-content:right;
+            align-items: center;
+            border: 3px solid gray;
+        }
+        input{
+            
+            border-radius: 2.5px;
+            border: 2px groove;
+        }
+        
+
+    </style>
+</head>
+
+<body background="regback.png" >
+    <h1 style="text-align: center;">Create Account<hr style="border: 1px solid whitesmoke;"><br></h1>
+    <fieldset >
+
+        <br>
+        <label for="userid">USER ID</label><br>
+        <input name="userid" type="text" id="inputs" placeholder="user id" required><br><br>
+        <label for="email">EMAIL ID</label><br>
+        <input name="email" type="email" id="inputs" placeholder="XYZ@gmail.com" required><br><br>
+        <label for="gender">GENDER:</label>
+        <select required>
+            <option value="gen" selected disabled>Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="others">Others</option>
+        </select><br><br>
+        <label for="password">ENTER A PASSWORD</label><br>
+        <input name="password" type="password" id="inputs" required><br><br>
+        <label for="repassword">RE-ENTER THE PASSWORD</label><br>
+        <input name="repassword" type="password" id="inputs"><br><br>
+        <input type="checkbox" id="term" required>I agree to all the <a
+            href="https://sellercentral.amazon.in/gp/help/external/200672320" target="_blank">Terms and Conditions</a><br><br>
+        <a href="sign-in.html" target="_self"><button class="center">submit</button></a>
+    </fieldset>
+</body>
+
+</html>

@@ -4,6 +4,23 @@
     <title>
         country and capitals
     </title>
+    <style>
+        fieldset{
+            border-width: 15px;
+            border-color: rgb(162, 249, 243);
+        }
+        img{
+            width: 400px;
+            height: 400px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        hr{
+            border-width: 2px;
+            
+        }
+    </style>
     <script>
         function def(){
             let val=document.getElementById("coun");
@@ -15,9 +32,19 @@
                 'Russia':'Moscow',
                 'Ukraine':'Kiev',
             }
+            let im={
+                'India':'https://cdn.sketchbubble.com/pub/media/catalog/product/optimized/e/2/e2d3a073fc2765da01286d7354005ca71a716ed30b30b2a2be38c77236f84084/india-map-slide1_1.png',
+                'China' : 'https://cdn.sketchbubble.com/pub/media/catalog/product/cache/1/image/720x540/c96a280f94e22e3ee3823dd0a1a87606/c/h/china-map-slide18.png',
+                'Afganistan':'https://cdn.sketchbubble.com/pub/media/catalog/product/cache/1/image/720x540/c96a280f94e22e3ee3823dd0a1a87606/a/f/afghanistan-map-slide1.png',
+                'Russia':'https://media.gettyimages.com/vectors/map-of-russia-states-cities-flag-navigation-icons-vector-id165902968',
+                'Ukraine':'https://cdn.sketchbubble.com/pub/media/catalog/product/cache/1/image/720x540/c96a280f94e22e3ee3823dd0a1a87606/u/k/ukraine-map-slide1_1.png',
+            }
+            
             let temp=val.options[ind].text;
             if(temp in m){
                 document.getElementById("pra").innerHTML="<h1>The capital of "+val.options[ind].text+" is " +m[val.options[ind].text]+"</h1>";
+                document.getElementById("imag").src=im[val.options[ind].text];
+                /* document.getElementById("det").innerHTML="<p>For more Information about the country <a href="">Tap here </a> </p>"; */
             }
             /* document.getElementById("pra").innerHTML="the capital of "+val.options[ind].text+" is"; */
         }
@@ -25,7 +52,7 @@
     </head>
     <body>
         
-        <label for="country">select  any country</label>
+        <label for="country"><b>select  any country</b></label>
         <select id="coun" onchange="def()">
             <option selected disabled>select any option</option>
             <option value="India">India</option>
@@ -34,9 +61,12 @@
             <option>Ukraine</option>
             <option>Russia</option>
         </select>
+        <hr>
         <fieldset style="background-color:whitesmoke;">
             <legend style="text-align: center;">Answere</legend>
             <p id="pra" style="text-align: center;"></p>
+            <img id="imag" src="" alt="Image of the country">
+            
         </fieldset>
         
     </body>

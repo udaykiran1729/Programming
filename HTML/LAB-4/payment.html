@@ -44,13 +44,18 @@
                 background-color: rgba(160, 237, 242, 0.1);
             }
         </style>
+        <script>
+            function suc(){
+                alert("order placed successful");
+            }
+        </script>
     </head>
 
     <body >
         <h1 style="text-align:center;">Inorder Form
         <hr><br></h1>
         
-        <form>
+        <form onsubmit="suc()" onsuspend="mainpage.html">
             
         <fieldset>
             <legend>Coustumer Details</legend><br>
@@ -106,7 +111,7 @@
             <input type="number" name="credit" required></h4>
             <label for="amount"><h4>Enter The Amount </label>
             <input for="amount" type="number" required></h4>
-            <script>
+            <!-- <script>
                 $(document).ready(function(){
                     $("button").click(function()
                     {
@@ -114,7 +119,7 @@
                     });
                 }
                 );
-            </script>
+            </script> -->
             <button type="submit">Pay</button>
         </fieldset>
     </form>

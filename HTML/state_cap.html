@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>
+        country and capitals
+    </title>
+    <script>
+        function def(){
+            let val=document.getElementById("coun");
+            let ind=val.selectedIndex;
+            let m={
+                'India':'Delhi',
+                'China':'Beijing',
+                'Afganistan':'Kabul',
+                'Russia':'Moscow',
+                'Ukraine':'Kiev',
+            }
+            let temp=val.options[ind].text;
+            if(temp in m){
+                document.getElementById("pra").innerHTML="<h1>The capital of "+val.options[ind].text+" is " +m[val.options[ind].text]+"</h1>";
+            }
+            /* document.getElementById("pra").innerHTML="the capital of "+val.options[ind].text+" is"; */
+        }
+    </script>
+    </head>
+    <body>
+        
+        <label for="country">select  any country</label>
+        <select id="coun" onchange="def()">
+            <option selected disabled>select any option</option>
+            <option value="India">India</option>
+            <option value="china">China</option>
+            <option value="afganistan">Afganistan</option>
+            <option>Ukraine</option>
+            <option>Russia</option>
+        </select>
+        <fieldset style="background-color:whitesmoke;">
+            <legend style="text-align: center;">Answere</legend>
+            <p id="pra" style="text-align: center;"></p>
+        </fieldset>
+        
+    </body>
+</html>
+

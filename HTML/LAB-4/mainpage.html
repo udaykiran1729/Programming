@@ -1,65 +1,107 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <title>
-            mainpage
-        </title>
-        <!-- <script type="text/javascript" src="jqery.js"></script> -->
-        <style>
-            
-            table{
-                border:2px solid black;
-                border-collapse: collapse ;
-                text-align: justify;
-                padding: 10px;
-            }
-            td,th{
-                border:2px solid black;
-                padding:10px;
-                margin:10px;
-            }
-            tr:hover{
-                background-color:rgb(211, 221, 229,0.5);
-            }
-            button:hover{
-                background-color: rgb(226, 244, 244,0.7);
-                border: 2px solid white;
-            }
-            
-            body{
-                
-                background-image: url("homeback.jpg");
-                background-color: rgba(255,255,255,0.9);
-                background-blend-mode: lighten;
-                background-repeat: no-repeat;
-            }
-        </style>
-        <script type="text/javascript">
-            function avail(){
-                var val=documnet.getElementById("availability");
-                console.log(val.value);
-                if(val=="Unavailable"){
-                    alert("Sorry,The Book you have selected is not Available");
-                    return false;
-                }
-                else{
-                    true;
-                }
-            }
-        </script>
 
-    </head>
+<head>
+    <title>
+        mainpage
+    </title>
+    <!-- <script type="text/javascript" src="jqery.js"></script> -->
+    <style>
+        table {
+            border: 2px solid rgba(0, 0, 0, 0.171);
+            border-collapse: collapse;
+            text-align: justify;
+            padding: 10px;
+        }
 
-    <body>
-        <H1 style="text-align: center;">WELCOME TO BOOK STORE</H1><hr> <br><br>
-        <h4>Search Here:  <input name="search" type="text" autocomplete="on" style="background-color:rgb(231, 249, 249,0.5);">
-        <button>Search</button>
-    </h4>
-        <table>
-           
-           
-           <form onsubmit="return avail()" action="payment.html">
+        td,th {
+            border: 2px solid rgba(0, 0, 0, 0.177);
+            padding: 10px;
+            margin: 10px;
+        }
+
+        a:hover,
+        tr:hover {
+            background-color: rgb(211, 221, 229, 0.5);
+        }
+
+        button:hover {
+            background-color: rgb(226, 244, 244, 0.7);
+            border: 2px solid white;
+        }
+
+        a {
+            margin: px;
+            color: black;
+            text-decoration: none;
+            padding: 10px;
+            /* padding-top: 90px; */
+            margin: 5px;
+            background-color: rgba(158, 247, 255, 0.5);
+            border-radius: 5px;
+        }
+
+        body {
+
+            background-image: url("homeback.jpg");
+            background-color: rgba(255, 255, 255, 0.9);
+            background-blend-mode: lighten;
+            background-repeat: no-repeat;
+        }
+    </style>
+    <script type="text/javascript">
+        function avail() {
+            var val = documnet.getElementById("availability");
+            console.log(val.value);
+            if (val == "Unavailable") {
+                alert("Sorry,The Book you have selected is not Available");
+                return false;
+            }
+            else {
+                true;
+            }
+        }
+        function search() {
+            var sear = document.getElementById("sear");
+            var nam = sear.value.toUpperCase();
+            var table = document.getElementById("tab");
+            var tabv = table.getElementsByTagName("tr");
+            for (var i = 0; i < tabv.length; i++) {
+                var ele = tabv[i].getElementsByTagName("tr")[1];
+                if (ele) {
+                    var v = td.textContent || td.innerText;
+                    if (v.toUpperCase().indexOf(nam) > -1) {
+                        tabv[i].style.display = "";
+                    }
+                    else {
+                        tabv[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <!-- <H1 style="text-align: center;">WELCOME TO BOOK STORE</H1><hr> <br><br> -->
+    <div id="menu" style="background-color: rgba(0, 0, 0, 0.171) ; height: 50px;">
+        <a href=""><b>Home</b></a>
+        <a href=""><b>Previos Orders</b></a>
+        <a href=""><b>Account</b></a>
+        <a href=""><b>About Us</b></a>
+        <a href=""><b>Settings</b></a>
+    </div>
+    <hr>
+    Search Here:
+    <input onkeyup="search()" name="search" type="search" autocomplete="on"
+        style="background-color:rgb(231, 249, 249,0.5);">
+    <table id="tab">
+
+
+        <form onsubmit="return avail()" action="payment.html">
             <tr style="background-color: rgb(66, 215, 248,0.2);">
                 <th>S.no</th>
                 <th>Name of the book</th>
@@ -68,7 +110,7 @@
                 <th>publisher</th>
                 <th>Seller</th>
                 <th>Ratings( /5)</th>
-                <th>Cost</t>
+                <th>Cost</th>
                 <th>Status</th>
                 <th></th>
             </tr>
@@ -76,7 +118,7 @@
             <tr>
                 <td>1.</td>
                 <td id="book">The Book Thief</td>
-                <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRY8tcU0WviMn0T0yjjFT-988oNhJ1czgHXtQ&usqp=CAU" width="85"></td>
+                <td><img src="book-1.jpg" width="85"></td>
                 <td>Markus Zusak</td>
                 <td>R publications</td>
                 <td>Maithili Book Store,Vijayawada</td>
@@ -112,8 +154,8 @@
                 <td><button type="submit">Buy</button></td>
             </tr>
 
-        </table>
+    </table>
     </form>
-    </body>
+</body>
 
 </html>

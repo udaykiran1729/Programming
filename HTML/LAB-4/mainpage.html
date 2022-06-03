@@ -21,14 +21,26 @@
             margin: 10px;
         }
 
-        a:hover,
+        a:hover{
+            padding: 12.5px;
+            transition: 0.5s;
+        }
+        /* button::after{
+            content: '00bb';
+            padding-left: 10px;
+            transition: 0.5s;
+        } */
         tr:hover {
             background-color: rgb(211, 221, 229, 0.5);
         }
 
         button:hover {
             background-color: rgb(226, 244, 244, 0.7);
-            border: 2px solid white;
+            border: 2px solid rgb(0, 0, 0);
+            background-image: radial-gradient(circle, #b3c9f5, #b0d2f8, #afdaf9, #b2e1fa, #b7e8f9);
+            padding: 7px; 
+            /* border-radius: 5px; */
+            transition: 0.35s;
         }
 
         a {
@@ -36,12 +48,15 @@
             color: black;
             text-decoration: none;
             padding: 10px;
+            
             /* padding-top: 90px; */
             margin: 5px;
             background-color: rgba(158, 247, 255, 0.5);
             border-radius: 5px;
         }
-
+        button{
+            padding-right: 10px;
+        }
         body {
 
             background-image: url("homeback.jpg");
@@ -87,7 +102,7 @@
 <body>
 
     <!-- <H1 style="text-align: center;">WELCOME TO BOOK STORE</H1><hr> <br><br> -->
-    <div id="menu" style="background-color: rgba(0, 0, 0, 0.171) ; height: 50px;">
+    <div id="menu" style="background-color: whitesmoke;padding:10px">
         <a href=""><b>Home</b></a>
         <a href=""><b>Previos Orders</b></a>
         <a href=""><b>Account</b></a>
@@ -151,6 +166,19 @@
                 <TD>4.0(5,034 reviews)</TD>
                 <td>Rs.259</td>
                 <td id="availability" style="color: red;">Unavailable</td>
+                <td><button type="submit">Buy</button></td>
+            </tr>
+
+            <tr>
+                <td>4.</td>
+                <td id="book">Birdcage Walk</td>
+                <td><img src="https://www.deadgoodbooks.co.uk/wp-content/uploads/2017/11/9780099592761.jpg" width="85"></td>
+                <td>Hellen Dunmore</td>
+                <td>Ruby publications</td>
+                <td>Uday Book Store,Darsi</td>
+                <TD>4.5(234 reviews)</TD>
+                <td>Rs.529</td>
+                <td id="availability">Available</td>
                 <td><button type="submit">Buy</button></td>
             </tr>
 

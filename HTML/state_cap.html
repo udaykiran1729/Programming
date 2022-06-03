@@ -5,9 +5,18 @@
         country and capitals
     </title>
     <style>
+        
         fieldset{
-            border-width: 15px;
-            border-color: rgb(162, 249, 243);
+            border: 0px;
+            border-color: rgba(255, 255, 255, 0.607);
+            display:null;
+            font-family: 'Times New Roman', Times, serif;
+            color: rgb(255, 229, 124);
+        }
+        a{
+            text-decoration: none;
+            color: whitesmoke;
+            font-weight: bold;
         }
         img{
             width: 400px;
@@ -15,10 +24,29 @@
             display: block;
             margin-left: auto;
             margin-right: auto;
+            opacity: 0.9;
+            transition: 0.5s;
         }
         hr{
             border-width: 2px;
+            border-color:rgba(255, 238, 0, 0.5);
+        }
+        body{
+            background-image: url('https://images.pexels.com/photos/592753/pexels-photo-592753.jpeg?cs=srgb&dl=pexels-aaditya-arora-592753.jpg&fm=jpg');
+            background-size:cover;
+            background-repeat: no-repeat;
+        }
+        select:hover{
+            color: rgba(255, 238, 0);
+            cursor: pointer;
+            transition: 0.4s;
+        }
+        select::after{
             
+        }
+        option:hover{
+            
+            transition: 0.5s;
         }
     </style>
     <script>
@@ -39,36 +67,46 @@
                 'Russia':'https://media.gettyimages.com/vectors/map-of-russia-states-cities-flag-navigation-icons-vector-id165902968',
                 'Ukraine':'https://cdn.sketchbubble.com/pub/media/catalog/product/cache/1/image/720x540/c96a280f94e22e3ee3823dd0a1a87606/u/k/ukraine-map-slide1_1.png',
             }
-            
+            let mi={
+                'India':'https://en.wikipedia.org/wiki/India',
+                'China':'https://en.wikipedia.org/wiki/China',
+                'Afganistan':'https://en.wikipedia.org/wiki/Afganistan',
+                'Russia':'https://en.wikipedia.org/wiki/Russia',
+                'Ukraine':'https://en.wikipedia.org/wiki/Ukraine',
+            }
             let temp=val.options[ind].text;
             if(temp in m){
+                document.getElementById("fie").style.display="block";
                 document.getElementById("pra").innerHTML="<h1>The capital of "+val.options[ind].text+" is " +m[val.options[ind].text]+"</h1>";
                 document.getElementById("imag").src=im[val.options[ind].text];
-                /* document.getElementById("det").innerHTML="<p>For more Information about the country <a href="">Tap here </a> </p>"; */
+                document.getElementById("imag").style.display="block";
+                document.getElementById("det").href=mi[val.options[ind].text];
+                document.getElementById("det1").style.display="block";
             }
             /* document.getElementById("pra").innerHTML="the capital of "+val.options[ind].text+" is"; */
         }
     </script>
     </head>
     <body>
+        <div style="text-align: center">
+        <label for="country" style="text-align: center;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman';color: rgb(246, 221, 120);"><b>Select  Any Country</b></label>
         
-        <label for="country"><b>select  any country</b></label>
-        <select id="coun" onchange="def()">
-            <option selected disabled>select any option</option>
-            <option value="India">India</option>
+        <select id="coun" onchange="def()" style="background-color: rgba(255, 238, 0, 0.5);">
+            <option selected disabled>select any option</option><img src="ind_icon.jpg">
+            <option value="India"> India</option>
             <option value="china">China</option>
             <option value="afganistan">Afganistan</option>
             <option>Ukraine</option>
             <option>Russia</option>
         </select>
+    </div>
         <hr>
-        <fieldset style="background-color:whitesmoke;">
+        <fieldset id="fie">
             <legend style="text-align: center;">Answere</legend>
             <p id="pra" style="text-align: center;"></p>
-            <img id="imag" src="" alt="Image of the country">
-            
+            <img style="display:none" id="imag" src="" alt="Image of the country">
+            <p><h2 id="det1" style="text-align: center;display: none;"><pre>For More Information <a id="det" href='' target='_blank' title="More Details"> Tap Here</pre></a></h2></p>
         </fieldset>
         
     </body>
 </html>
-

@@ -3,12 +3,15 @@
 <html>
 
 <head>
+
     <title>
         SIGN IN
     </title>
     <script type="text/css" href="jquery.js"></script>
+    <link rel="icon" href="ico.jpeg">
     <style>
         fieldset {
+            
             text-align: center;
             display: block;
             margin-left: 400px;
@@ -35,11 +38,23 @@
             transition: 0.5s;
         }
         body{
-            background-image: url(https://wi.wallpapertip.com/wsimgs/69-691636_best-background-images-for-website-wallpapers-high-good.jpg);
+            /* background-image: url(https://wi.wallpapertip.com/wsimgs/69-691636_best-background-images-for-website-wallpapers-high-good.jpg);
             background-size: cover;
+            background-repeat: no-repeat; */
+
+            background:url('Capture.jpg');
+            background-color: rgba(255, 255, 255, 0.9);
             background-repeat: no-repeat;
+            background-size: 600px 600px;
+            background-position: 450px 10px;
+            
+            background-blend-mode: lighten;
+            
             
         }
+        button:not(:hover){
+           transition: 0.5s;
+       }
         a{
             text-decoration: none;
         }
@@ -83,6 +98,9 @@
     <h1 style="text-align:center;">SIGN IN
         <hr style="border: 1px solid black;"><br>
     </h1>
+    <!-- <div id="back">
+        <img src="Capture.jpg" style="margin-left: auto;margin-right:auto;opacity:0.5">
+    </div> -->
     <form onsubmit="return ver()" action="mainpage.html">
         <fieldset>
 

@@ -5,9 +5,16 @@
 <head>
     <title>REGISTER PAGE
     </title>
+    <link rel="icon" href="ico_1.png">
     <style>
         fieldset {
-
+            background:url('ico.jpeg');
+            background-color: rgba(255, 255, 255, 0.9);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 700px;
+            
+            background-blend-mode: lighten;
             display: block;
             margin-left: 500px;
             margin-right: 500px;
@@ -15,10 +22,13 @@
             padding: 10px;
             border: 2px groove;
             border-radius: 20px;
-            background-color: rgb(239, 246, 250, 0.5);
+            
 
 
         }
+        button:not(:hover){
+           transition: 0.5s;
+       }
 
         button,
         #term {

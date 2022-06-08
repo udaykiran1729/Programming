@@ -7,55 +7,74 @@
     </title>
     <style>
         fieldset {
-            
+
             display: block;
-            margin-left: 500px ;
-            margin-right: 500px ;
+            margin-left: 500px;
+            margin-right: 500px;
             /* margin: auto; */
             padding: 10px;
             border: 2px groove;
             border-radius: 20px;
-            background-color: rgb(239, 246, 250,0.5);
-            
+            background-color: rgb(239, 246, 250, 0.5);
+
 
         }
 
-        button,#term {
+        button,
+        #term {
             cursor: pointer;
             padding: 5px;
             display: flexbox;
             border: 2px groove;
             border-radius: 5px;
         }
-        button:hover,a:hover{
-            background-color: rgb(196, 255, 254,0.5);
+        
+        button:hover,
+        a:hover {
+            background-color: rgb(196, 255, 254, 0.5);
             border-color: rgb(135, 237, 238);
+            transition: 0.5s;
         }
+
         .center {
-            
-            justify-content:right;
+
+            justify-content: right;
             align-items: center;
             border: 3px solid gray;
+            float: right;
         }
-        input{
-            
-            border-radius: 2.5px;
-            border: 2px groove;
-        }
-        
 
+        input {
+
+            border-radius: 5px;
+            border: 2px groove;
+            width: 70%;
+        }
+
+        body {
+            background-image: url(https://th.bing.com/th/id/R.669e5afad4adbcdc66af89ed7f3f6240?rik=9RHN83mmqC%2fm3w&riu=http%3a%2f%2fcdn.wallpapersafari.com%2f11%2f92%2fTduYC2.jpg&ehk=OHlwEgDWdNiHMoV6hivuertk5oUVQtxcwJbdDN7kAko%3d&risl=&pid=ImgRaw&r=0);
+            background-size: cover;
+        }
     </style>
+    <script>
+        function arr() {
+            let user = [], pass = [];
+            user[user.length] = document.getElementById("inputu").value;
+            pass[pass.length] = document.getElementById("inputp").value;
+        }
+    </script>
 </head>
 
-<body background="regback.png" >
-    <h1 style="text-align: center;">Create Account<hr style="border: 1px solid whitesmoke;"><br></h1>
-    <fieldset >
-
+<bod>
+    <h1 style="text-align: center;">Create Account
+        <hr style="border: 1px solid whitesmoke;"><br>
+    </h1>
+    <fieldset>
         <br>
         <label for="userid">USER ID</label><br>
-        <input name="userid" type="text" id="inputs" placeholder="user id" required><br><br>
+        <input name="userid" type="text" id="inputu" placeholder="user id" required><br><br>
         <label for="email">EMAIL ID</label><br>
-        <input name="email" type="email" id="inputs" placeholder="XYZ@gmail.com" required><br><br>
+        <input name="email" type="email" id="inpute" placeholder="XYZ@gmail.com" required><br><br>
         <label for="gender">GENDER:</label>
         <select required>
             <option value="gen" selected disabled>Gender</option>
@@ -64,13 +83,14 @@
             <option value="others">Others</option>
         </select><br><br>
         <label for="password">ENTER A PASSWORD</label><br>
-        <input name="password" type="password" id="inputs" required><br><br>
+        <input name="password" type="password" id="inputp" required><br><br>
         <label for="repassword">RE-ENTER THE PASSWORD</label><br>
         <input name="repassword" type="password" id="inputs"><br><br>
-        <input type="checkbox" id="term" required>I agree to all the <a
-            href="https://sellercentral.amazon.in/gp/help/external/200672320" target="_blank">Terms and Conditions</a><br><br>
-        <a href="sign-in.html" target="_self"><button class="center">submit</button></a>
+        <input type="checkbox" id="term" required style="width: 5%;">I agree to all the <a
+            href="https://sellercentral.amazon.in/gp/help/external/200672320" target="_blank">Terms and
+            Conditions</a><br><br>
+        <a href="sign-in.html" target="_blank"><button class="center" onclick="arr()">submit</button></a>
     </fieldset>
-</body>
+    </body>
 
 </html>

@@ -49,9 +49,17 @@
         body {
             background-color: rgba(160, 237, 242, 0.1);
         }
-
+        img{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 200px;
+            height: 200px;
+            transition: 0.5s;
+        }
         #suc {
-            position:absolute;
+            
+            position:fixed;
             display: none;
             width: 100%;
             height: 100%;
@@ -61,11 +69,14 @@
             bottom: 0;
             background-color: rgba(0, 0, 0, 0.5);
             z-index: 2;
+            transition: .5s ease;
         }
     </style>
     <script>
         function suc() {
             document.getElementById("suc").style.display = "block";
+            document.getElementById("suc").style.transition="0.5s";
+            return false;
             /* document.getElementById("suc").style.transition="0.5s"; */
         }
         function fai() {
@@ -79,7 +90,7 @@
         <hr><br>
     </h1>
 
-    <form>
+    <form onsubmit="return suc()">
 
         <fieldset>
             <legend>Coustumer Details</legend><br>
@@ -119,8 +130,8 @@
         </fieldset>
         <div id="suc">
             <fieldset style="background-color:rgba(255, 255, 255);margin: 150px;">
-                <h1 style="text-align: center;color: rgba(0, 128, 0, 0.663);">Congratulations , Your Order Placed Successfully</h1>
-                <button style="text-align: center;margin: auto;">Okay!</button>
+                <img src="giphy.gif" alt="not loaded"><br>
+                <h1 style="text-align: center;color: rgba(0, 128, 0, 0.663);">Congratulations , Your Order Placed Successfully<span><br>You can exit from the Window Now...</span></h1>
             </fieldset>
         </div>
         <br><br><br><br>
@@ -153,7 +164,7 @@
                 }
                 );
             </script> -->
-            <button type="submit" onclick="suc()">Pay</button>
+            <button type="submit">Pay</button>
         </fieldset>
     </form>
 </body>

@@ -13,18 +13,23 @@
             border-collapse: collapse;
             text-align: justify;
             padding: 10px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        td,th {
+        td,
+        th {
             border: 2px solid rgba(0, 0, 0, 0.177);
             padding: 10px;
             margin: 10px;
         }
 
-        a:hover{
-            padding: 12.5px;
+        a:hover {
+            border: 1px solid rgb(138, 207, 228);
+            border-radius: 7px;
             transition: 0.5s;
         }
+
         /* button::after{
             content: '00bb';
             padding-left: 10px;
@@ -37,53 +42,55 @@
         button:hover {
             background-color: rgb(226, 244, 244, 0.7);
             border: 2px solid rgb(0, 0, 0);
-            background-image: radial-gradient(circle, #b3c9f5, #b0d2f8, #afdaf9, #b2e1fa, #b7e8f9);
-            padding: 7px; 
-            /* border-radius: 5px; */
+            border-radius: 5px;
+            padding: 7px;
             transition: 0.35s;
         }
 
         a {
-            margin: px;
+
             color: black;
             text-decoration: none;
             padding: 10px;
-            
             /* padding-top: 90px; */
-            margin: 5px;
+            margin: 10px;
             background-color: rgba(158, 247, 255, 0.5);
-            border-radius: 5px;
+
         }
-        button{
+
+        button {
             padding-right: 10px;
         }
+
         body {
 
             background-image: url("homeback.jpg");
             background-color: rgba(255, 255, 255, 0.9);
             background-blend-mode: lighten;
             background-repeat: no-repeat;
+
         }
     </style>
     <script type="text/javascript">
         function avail() {
-            var val = documnet.getElementById("availability");
-            console.log(val.value);
-            if (val == "Unavailable") {
-                alert("Sorry,The Book you have selected is not Available");
-                return false;
+
+            var i, tr = document.getElementsByTagName("tr");
+            var len = tr.length;
+            for (i = 0; i < len; i++) {
+                td = tr[i].document.getElementsByTagName("td")[8];
+                if (td.value == "Unavailable") {
+                    tr[i].document.getElementById("but").style.color = "red";
+                }
             }
-            else {
-                true;
-            }
+
         }
-        function search() {
+        /* function search() {
             var sear = document.getElementById("sear");
             var nam = sear.value.toUpperCase();
             var table = document.getElementById("tab");
             var tabv = table.getElementsByTagName("tr");
             for (var i = 0; i < tabv.length; i++) {
-                var ele = tabv[i].getElementsByTagName("tr")[1];
+                var ele = tabv[i].getElementsByTagName("tr")[0];
                 if (ele) {
                     var v = td.textContent || td.innerText;
                     if (v.toUpperCase().indexOf(nam) > -1) {
@@ -94,29 +101,56 @@
                     }
                 }
             }
+        } */
+        function search() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("sear");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("tab");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[1];
+                if (td) {
+                    txtValue = td.value;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
         }
     </script>
 
 </head>
 
-<body>
+<body onload="avail()">
 
     <!-- <H1 style="text-align: center;">WELCOME TO BOOK STORE</H1><hr> <br><br> -->
-    <div id="menu" style="background-color: whitesmoke;padding:10px">
+    <img src="ico.jpg" style="width: 60px;height
+    :60px;display: inline;padding-top: 15px;">
+    <h1 style="padding-top: 10px;display: inline;color: rgb(0, 149, 255);font-family: Verdana;font-weight: bold;font-size:290%;">.COM</h1>
+    <div id="menu" style="padding:10px;float: right;display: inline;">
+        <br><br>
         <a href=""><b>Home</b></a>
         <a href=""><b>Previos Orders</b></a>
         <a href=""><b>Account</b></a>
         <a href=""><b>About Us</b></a>
         <a href=""><b>Settings</b></a>
+        <a href="sign-in.html" style="background-color: rgba(255, 0, 0, 0.507);"><b>Sign Out</b></a>
     </div>
-    <hr>
-    Search Here:
-    <input onkeyup="search()" name="search" type="search" autocomplete="on"
-        style="background-color:rgb(231, 249, 249,0.5);">
-    <table id="tab">
+    <br><br>
+    <hr style="color: blue;">
+    <h3 style="text-align: center;">Search Here:
+        <input id="sear" onkeyup="search()" name="search" placeholder="Search Here" type="search" autocomplete="on"
+            style="background-color:rgb(231, 249, 249,0.5);">
+    </h3>
+    <br>
+    <form onsubmit="return avail()" action="payment.html">
+        <table id="tab">
 
 
-        <form onsubmit="return avail()" action="payment.html">
+
             <tr style="background-color: rgb(66, 215, 248,0.2);">
                 <th>S.no</th>
                 <th>Name of the book</th>
@@ -139,8 +173,8 @@
                 <td>Maithili Book Store,Vijayawada</td>
                 <TD>4.2(12,233 reviews)</TD>
                 <td>Rs.539</td>
-                <td id="availability">Available</td>
-                <td><button type="submit">Buy</button></a></td>
+                <td>Available</td>
+                <td><button id="but" type="submit">Buy</button></td>
             </tr>
 
             <tr>
@@ -153,7 +187,7 @@
                 <TD>3.6(9,513 reviews)</TD>
                 <td>Rs.239</td>
                 <td id="availability">Available</td>
-                <td><button type="submit">Buy</button></a></td>
+                <td><button id="but" type="submit">Buy</button></td>
             </tr>
 
             <tr>
@@ -166,23 +200,24 @@
                 <TD>4.0(5,034 reviews)</TD>
                 <td>Rs.259</td>
                 <td id="availability" style="color: red;">Unavailable</td>
-                <td><button type="submit">Buy</button></td>
+                <td><button id="but" type="submit">Buy</button></td>
             </tr>
 
             <tr>
                 <td>4.</td>
                 <td id="book">Birdcage Walk</td>
-                <td><img src="https://www.deadgoodbooks.co.uk/wp-content/uploads/2017/11/9780099592761.jpg" width="85"></td>
+                <td><img src="https://www.deadgoodbooks.co.uk/wp-content/uploads/2017/11/9780099592761.jpg" width="85">
+                </td>
                 <td>Hellen Dunmore</td>
                 <td>Ruby publications</td>
                 <td>Uday Book Store,Darsi</td>
                 <TD>4.5(234 reviews)</TD>
                 <td>Rs.529</td>
                 <td id="availability">Available</td>
-                <td><button type="submit">Buy</button></td>
+                <td><button id="but" type="submit">Buy</button></td>
             </tr>
 
-    </table>
+        </table>
     </form>
 </body>
 

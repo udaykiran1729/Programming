@@ -1,6 +1,13 @@
-let m=1020301020301020040400000n;
-let n="uday";
-let n1="kiran"
-let n2=n+" "+n1
-console.log("uday \nkire\berran");
-console.log(m);
+let m={
+    name:'uday',
+    rg_no:'177',
+    tu:890,
+    mine:{
+        n:12,
+        p:23,
+    }
+}
+
+for (let me in m.mine){
+    console.log(me,'',m.mine[me]);
+}

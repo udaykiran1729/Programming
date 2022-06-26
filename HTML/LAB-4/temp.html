@@ -6,14 +6,16 @@
     <title>
         mainpage
     </title>
-    <link rel="icon" href="logo.jpeg">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo&family=Rajdhani&family=Rubik+Moonrocks&display=swap" rel="stylesheet">
     <!-- <script type="text/javascript" src="jqery.js"></script> -->
     <style>
-        *{
-            top:0px;
+        * {
+            top: 0px;
             bottom: 0px;
         }
+
         table {
             border: 2px solid rgba(0, 0, 0, 0.171);
             border-collapse: collapse;
@@ -22,9 +24,11 @@
             margin-left: auto;
             margin-right: auto;
         }
-        button:not(:hover){
-           transition: 0.5s;
-       }
+
+        button:not(:hover) {
+            transition: 0.5s;
+        }
+
         td,
         th {
             border: 2px solid rgba(0, 0, 0, 0.177);
@@ -33,7 +37,7 @@
         }
 
         a:hover {
-           background-color: aqua;
+            background-color: aqua;
             transition: 0.5s;
         }
 
@@ -63,15 +67,23 @@
             /* padding-top: 90px; */
             /* margin: 10px; */
             background-color: rgba(158, 247, 255, 0.5);
+        }
 
+        h1,
+        h2,
+        h3 {
+            display: inline-flexbox;
         }
 
         /* button {
             padding-right: 10px;
         } */
-        img,h1,a{
-            display:inline-block;
+        img,
+        h1 {
+            display: flow-root;
+            color: #2f4f4f;
         }
+
         body {
 
             background-image: url("homeback.jpg");
@@ -79,16 +91,33 @@
             background-blend-mode: lighten;
             background-repeat: no-repeat;
 
-            
+
         }
-        #menubar{
+
+        #menubar {
             top: 0px;
             margin-top: 0px;
-            background-image: linear-gradient(to top right,#7dafc2,#2f4f4f);
+            background-image: linear-gradient(to top right, #7dafc2, #2f4f4f);
         }
-        img{
+
+        img {
             margin: 0px;
-            
+            float: right;
+            width: 150px;
+        }
+
+        fieldset {
+            margin-top: 100px;
+            margin-left: 50px;
+            margin-right: 50px;
+            color: whitesmoke;
+            border-color: gold;
+            border-radius: 5px;
+            background-image: linear-gradient(to right top, #7169F6,  #beffb9);
+        }
+
+        span {
+            color: whitesmoke;
         }
     </style>
     <script type="text/javascript">
@@ -146,100 +175,40 @@
 
 <body onload="avail()">
     <div id="menubar">
-    <img src="logo.jpeg" style="width: 100px;height
-    :1-0px;display: inline;padding-top: 15px;">
-    <!-- <H1 style="text-align: center;">Welcome To The Book Mart</H1> -->
-    
-    <!-- <h1 style="padding-top: 10px;display: inline;color: rgb(0, 149, 255);font-family: Verdana;font-weight: bold;font-size:290%;">.COM</h1> -->
-    <div id="menu" style="padding:10px;float: right;display: inline-table;">
-        <br><br>
-        <a href=""><b>Home</b></a>
-        <a href=""><b>Previos Orders</b></a>
-        <a href=""><b>Account</b></a>
-        <a href=""><b>About Us</b></a>
-        <a href=""><b>Settings</b></a>
-        <a href="sign-in.html" style="background-color: rgba(255, 0, 0, 0.507);"><b>Sign Out</b></a>
-    </div>
+        <img src="logo.jpeg" style="width: 100px;height
+    :1-0px;display: inline;padding-top: 15px;float: left;">
+        <!-- <H1 style="text-align: center;">Welcome To The Book Mart</H1> -->
+
+        <!-- <h1 style="padding-top: 10px;display: inline;color: rgb(0, 149, 255);font-family: Verdana;font-weight: bold;font-size:290%;">.COM</h1> -->
+        <div id="menu" style="padding:10px;float: right;display: inline-table;">
+            <br><br>
+            <a href=""><b>Home</b></a>
+            <a href=""><b>Previos Orders</b></a>
+            <a href=""><b>Account</b></a>
+            <a href=""><b>About Us</b></a>
+            <a href=""><b>Settings</b></a>
+            <a href="sign-in.html" style="background-color: rgba(255, 0, 0, 0.507);"><b>Sign Out</b></a>
+        </div>
     </div>
     <br><br>
-    
+
     <h3 style="text-align: center;">Search Here:
         <input id="sear" onkeyup="search()" name="search" placeholder="Search Here" type="search" autocomplete="on"
             style="background-color:rgb(231, 249, 249,0.5);">
     </h3>
     <br>
     <form onsubmit="return avail()" action="payment.html">
-        <table id="tab">
-
-
-
-            <tr style="background-color: rgb(66, 215, 248,0.2);">
-                <th>S.no</th>
-                <th>Name of the book</th>
-                <th>Preview</th>
-                <th>Author</th>
-                <th>publisher</th>
-                <th>Seller</th>
-                <th>Ratings( /5)</th>
-                <th>Cost</th>
-                <th>Status</th>
-                <th></th>
-            </tr>
-
-            <tr>
-                <td>1.</td>
-                <td id="book">The Book Thief</td>
-                <td><img src="book-1.jpg" width="85"></td>
-                <td>Markus Zusak</td>
-                <td>R publications</td>
-                <td>Maithili Book Store,Vijayawada</td>
-                <TD>4.2(12,233 reviews)</TD>
-                <td>Rs.539</td>
-                <td>Available</td>
-                <td><button id="but" type="submit">Buy</button></td>
-            </tr>
-
-            <tr>
-                <td>2.</td>
-                <td id="book">The Girl in Room 105</td>
-                <td><img src="book-2.jpg"></td>
-                <td>Chetan Bhagat</td>
-                <td>D publications</td>
-                <td>Vivekananda Book Store,Guntur</td>
-                <TD>3.6(9,513 reviews)</TD>
-                <td>Rs.239</td>
-                <td id="availability">Available</td>
-                <td><button id="but" type="submit">Buy</button></td>
-            </tr>
-
-            <tr>
-                <td>3.</td>
-                <td id="book">One Night @ Call Center</td>
-                <td><img src="book-3.jpg" width="85"></td>
-                <td>Chetan Bhagat</td>
-                <td>Ruby publications</td>
-                <td>Uday Book Store,Darsi</td>
-                <TD>4.0(5,034 reviews)</TD>
-                <td>Rs.259</td>
-                <td id="availability" style="color: red;">Unavailable</td>
-                <td><button id="but" type="submit">Buy</button></td>
-            </tr>
-
-            <tr>
-                <td>4.</td>
-                <td id="book">Birdcage Walk</td>
-                <td><img src="https://www.deadgoodbooks.co.uk/wp-content/uploads/2017/11/9780099592761.jpg" width="85">
-                </td>
-                <td>Hellen Dunmore</td>
-                <td>Ruby publications</td>
-                <td>Uday Book Store,Darsi</td>
-                <TD>4.5(234 reviews)</TD>
-                <td>Rs.529</td>
-                <td id="availability">Available</td>
-                <td><button id="but" type="submit">Buy</button></td>
-            </tr>
-
-        </table>
+        <div id="b1">
+            <fieldset>
+                <img src="https://images-na.ssl-images-amazon.com/images/I/51APkyJzNlL._SX324_BO1,204,203,200_.jpg"
+                    width="85">
+                <h1>The Book Theif<br>4.5*</h1>
+                <h2>By:Markus Zusak <br> <br><span>About the Author:</span><br>
+                    MARKUS ZUSAK is the bestselling author of six novels, including THE BOOK THIEF. His books have been
+                    translated into more than forty languages, to both popular and critical acclaim. He lives in Sydney
+                    with his wife and two children.</h2>
+            </fieldset>
+        </div>
     </form>
 </body>
 

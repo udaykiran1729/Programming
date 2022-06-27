@@ -4,18 +4,31 @@
     <head>
         <script>
             function dis(val){
+                document.getElementById("result").style.color="whitesmoke";
                 document.getElementById("result").value+=val;
             }
             function clr(){
-                document.getElementById("result").value;
+                document.getElementById("result").value=null;
+                document.getElementById("result").style.color="whitesmoke";
             }
             /* function key(KeyboardEvent){
                 document.value+=KeyboardEvent
             } */
             function res(){
+                try{
                 let exp=document.getElementById("result").value;
                 let re=eval(exp);
+                if(typeof(re)!='number'){
+                    throw "error";
+                }
                 document.getElementById("result").value+="="+re;
+                }
+                catch(err){
+                    document.getElementById("result").style.color="red";
+                    document.getElementById("result").value="Syntax Error";
+                    
+                }
+                
             }
             function back(){
                 let exp=document.getElementById("result").value;
@@ -27,20 +40,58 @@
     </head>
 
     <style>
+        *{
+            font-size: 40px;
+        }
+        body{
+            background-image: linear-gradient(to right , #4e4e4f, #585859, #626263, #6c6c6d, #767677);
+        }
         fieldset{
+            display: flex;
+            justify-content: center;
+            
            /*  margin-top: 200px; */
-            margin-left: 400px;
+           border-radius:500px;
+           width: 500px;
+           height: 500px;
+           top: 2000px;
+            margin-left: 640px;
             margin-right: 400px;
             text-align: center;
             
         }
+        .butt{
+            width: 80px;
+            height: 80px;
+            background-image: linear-gradient(to right top, #1e1e1f, #1e1e20, #1e1e21, #1e1e21, #1e1e22);
+            box-shadow: 2px 2px rgb(114, 218, 250);
+            color: white;
+        }
+        .butt:hover{
+            font-size: 45px;
+            background: rgba(255, 166, 0);
+        }
+        
         input{
             /* margin-right: 20px;
             padding: 10px;
             border-right: 20px solid black ; */
+            
+            color: whitesmoke;
+            background-image: linear-gradient(to right top, #4e4e4f, #585859, #626263, #6c6c6d, #767677);
+            margin: auto;
+            display: block;
+            width: 350px;
+            height: 70px;
             padding: 10px;
         }
+        input:hover{
+            border-color: gold;
+            box-shadow: 10px 10px 50px 20px gold;
+            transition:0.9s;
+        }
         th,td{
+            font-size:50px;
             padding: 6px;
         } 
      table{
@@ -48,6 +99,13 @@
             margin-left:280px;
             margin-right: 280px ;
             margin-bottom: 100px;   
+        }
+        fieldset:hover{
+            box-shadow: 10px 10px 50px 20px gold;
+            transition: 0.9s;
+        }
+        fieldset:not(:hover),input:not(:hover){
+            transition: 0.9s;
         }
      /* table,th,td{
             border: 2px solid black;
@@ -57,44 +115,50 @@
         
 </style>
 
-    <body style="background-image: linear-gradient(to left top,#898c73, #978e6d, #a98e69, #bc8d6b, #d08a73, #d89272, #df9b70, #e5a46f, #d0be70, #b1d78b, #89ebba, #5ffbf3);background-size: cover;background-repeat: no-repeat;">
+    
         
-        <h1 style="text-align: center;">Calculator</h1>
-        
+        <h1 style="text-align: center;color: aliceblue;">Calculator</h1>
+        <div id="bod">
+        <input type="text" id="result" style="margin-top: 100px;text-align: center;">
+        <br>
         <fieldset>
-        <input type="text" id="result" style="margin-top: 100px;"><br>
+        <br>
         <table>
             <tr>
                 
-                    <td><input type="button" value="1" onclick="dis('1')"></td>
-                    <td><input type="button" value="2" onclick="dis('2')"></td>
-                    <td><input type="button" value="3" onclick="dis('3')"></td>
-                    <td><input type="button" value="+" onclick="dis('+')"></td>
+                    <td><input type="button" class="butt" value="1" onclick="dis('1')"></td>
+                    <td><input type="button" class="butt" value="2" onclick="dis('2')"></td>
+                    <td><input type="button" class="butt" value="3" onclick="dis('3')"></td>
+                    <td><input type="button" class="butt" value="+" onclick="dis('+')"></td>
                 
             </tr>
 
             <tr>
-                    <td><input type="button" value="4" onclick="dis('4')"></td>
-                    <td><input type="button" value="5" onclick="dis('5')"></td>
-                    <td><input type="button" value="6" onclick="dis('6')"></td>
-                    <td><input type="button" value="-" onclick="dis('-')"></td>
+                    <td><input type="button" class="butt" value="4" onclick="dis('4')"></td>
+                    <td><input type="button" class="butt" value="5" onclick="dis('5')"></td>
+                    <td><input type="button" class="butt" value="6" onclick="dis('6')"></td>
+                    <td><input type="button" class="butt" value="-" onclick="dis('-')"></td>
                 
             </tr>
 
             <tr>
-                    <td><input type="button" value="7" onclick="dis('7')"></td>
-                    <td><input type="button" value="8" onclick="dis('8')"></td>
-                    <td><input type="button" value="9" onclick="dis('9')"></td>
-                    <td><input type="button" value="*" onclick="dis('*')"></td>
+                    <td><input type="button" class="butt" value="7" onclick="dis('7')"></td>
+                    <td><input type="button" class="butt" value="8" onclick="dis('8')"></td>
+                    <td><input type="button" class="butt" value="9" onclick="dis('9')"></td>
+                    <td><input type="button" class="butt" value="*" onclick="dis('*')"></td>
                 
             </tr>
 
             <tr>
-                    <td><input type="button" value="=" onclick="res()"></td>
-                    <td><input type="button" value="0" onclick="dis('0')"></td>
-                    <td><input type="button" value="c" onclick="clr()"></td>
-                    <td><input type="button" value="<" onclick="back()"></td>
+                    <td><input type="button" class="butt" value="=" onclick="res()" ></td>
+                    <td><input type="button" class="butt" value="0" onclick="dis('0')"></td>
+                    <td><input type="button" class="butt" value="c" onclick="clr()"></td>
+                    <td><input type="button" class="butt" value="<" onclick="back()"></td>
             </tr>
     </table>
 </fieldset>
-</body></html>
+</div>
+
+</body>
+
+</html>

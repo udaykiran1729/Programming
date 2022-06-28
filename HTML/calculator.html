@@ -4,7 +4,7 @@
     <head>
         <script>
             function dis(val){
-                document.getElementById("result").style.color="whitesmoke";
+                
                 document.getElementById("result").value+=val;
             }
             function clr(){
@@ -21,12 +21,13 @@
                 if(typeof(re)!='number'){
                     throw "error";
                 }
-                document.getElementById("result").value+="="+re;
+                document.getElementById("result").value+=" = "+re;
+                document.getElementById("res1").innerHTML=re;
                 }
                 catch(err){
                     document.getElementById("result").style.color="red";
                     document.getElementById("result").value="Syntax Error";
-                    
+                    /* document.getElementById("res1").innerHTML= */
                 }
                 
             }
@@ -47,16 +48,14 @@
             background-image: linear-gradient(to right , #4e4e4f, #585859, #626263, #6c6c6d, #767677);
         }
         fieldset{
-            display: flex;
-            justify-content: center;
             
            /*  margin-top: 200px; */
            border-radius:500px;
            width: 500px;
            height: 500px;
            top: 2000px;
-            margin-left: 640px;
-            margin-right: 400px;
+            margin-left: auto;
+            margin-right: auto;
             text-align: center;
             
         }
@@ -107,6 +106,19 @@
         fieldset:not(:hover),input:not(:hover){
             transition: 0.9s;
         }
+        #res1{
+            text-align: center;
+            padding:40px;
+            /* margin-left: 1000px;
+            margin-right: 1000px; */
+            
+            display: flex;
+            justify-content: center;
+            background-image: linear-gradient(to right top, #1e1e1f, #1e1e20, #1e1e21, #1e1e21, #1e1e22);
+            color: rgb(6, 255, 6);
+            margin: auto; width: 200px;
+            border:2px solid white;
+        }
      /* table,th,td{
             border: 2px solid black;
     }*/
@@ -120,6 +132,8 @@
         <h1 style="text-align: center;color: aliceblue;">Calculator</h1>
         <div id="bod">
         <input type="text" id="result" style="margin-top: 100px;text-align: center;">
+        <br>
+        <h2 id="res1"></h2>
         <br>
         <fieldset>
         <br>

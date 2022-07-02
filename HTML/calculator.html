@@ -21,7 +21,7 @@
                 if(typeof(re)!='number'){
                     throw "error";
                 }
-                document.getElementById("result").value+=" = "+re;
+                /* document.getElementById("result").value+=" = "+re; */
                 document.getElementById("res1").innerHTML=re;
                 }
                 catch(err){
@@ -35,6 +35,16 @@
                 let exp=document.getElementById("result").value;
                 document.getElementById("result").value=exp.slice(0,exp.length-1);
             }
+            function mode(){
+                if (document.body.style.background=='white'){
+                    document.body.style.background= 'black';
+                    document.getElementById('h1').style.color='white';
+                }
+                else{
+                document.body.style.background='white';
+                document.getElementById('h1').style.color='black';
+                }
+            }
         </script>
         <title>project Ca</title>
         
@@ -43,6 +53,7 @@
     <style>
         *{
             font-size: 40px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         }
         body{
             background-image: linear-gradient(to right , #4e4e4f, #585859, #626263, #6c6c6d, #767677);
@@ -73,11 +84,10 @@
         
         input{
             /* margin-right: 20px;
-            padding: 10px;
-            border-right: 20px solid black ; */
-            
+            padding: 10px;*/
+            background-color: rgb(81, 74, 74);       
             color: whitesmoke;
-            background-image: linear-gradient(to right top, #4e4e4f, #585859, #626263, #6c6c6d, #767677);
+            /* background-image: linear-gradient(to right top, #4e4e4f, #585859, #626263, #6c6c6d, #767677); */
             margin: auto;
             display: block;
             width: 350px;
@@ -119,6 +129,10 @@
             margin: auto; width: 200px;
             border:2px solid white;
         }
+        #mode{
+            float: right;
+        }
+        
      /* table,th,td{
             border: 2px solid black;
     }*/
@@ -128,8 +142,9 @@
 </style>
 
     
-        
-        <h1 style="text-align: center;color: aliceblue;">Calculator</h1>
+        <button id="mode" onclick="mode()" style="margin-left: 100px;">Mode</button>
+        <br>
+        <h1 id="h1" style="text-align: center;color: black;font-weight: bolder;font-size: xxx-large;">CALCULATOR</h1>
         <div id="bod">
         <input type="text" id="result" style="margin-top: 100px;text-align: center;">
         <br>

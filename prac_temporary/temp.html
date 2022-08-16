@@ -1,17 +1,39 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>
-            ;adf
-        </title>
-        <style>
-            h1{
-                text-shadow: 2px 2px 4px 8px red;
-                text-decoration-color: blue;
+
+<body style="background-color:rgb(181, 128, 243);">
+
+    <h2>JavaScript HTML DOM</h2>
+
+    <p>Hello World!</p>
+
+    <p>Hello Uday!</p>
+
+    <p>Click the button to change the color of all p elements.</p>
+    <a name="html">HTML Tutorial</a><br>
+    <a name="css">CSS Tutorial</a><br>
+    <a name="xml">XML Tutorial</a><br>
+    <p>The content of the first anchor in this document is:</p>
+    <p id="demo"></p>
+    <button onclick="myFunction()">Try it</button>
+    <button onclick="mFunction()">Change</button>
+    <script>
+        function myFunction() {
+            const myCollection = document.getElementsByTagName("p");
+            for (let i = 0; i < myCollection.length; i++) {
+                myCollection[i].style.color = "blue";
             }
-        </style>
-        <script type="text/javascript" src="jqery.js"></script>
-    </head>
-    <body>
-        <h1>uday kiran</h1>
-    </body>
+        }
+        function mFunction() {
+            const collection = document.body.children;
+            for (let i = 0; i < collection.length; i++) {
+                collection[i].style.backgroundColor = "red";
+            }
+        }
+        let content = document.getElementsByTagName("a")[0].innerHTML;
+        document.getElementById("demo").innerHTML = content;
+    </script>
+
+</body>
+
 </html>

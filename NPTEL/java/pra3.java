@@ -1,20 +1,30 @@
-class pra0<t>{
-    t m[];
-    pra0(t m[]){
-        this.m=m;
-    }
-    public void print(){
-        //t i;
-        for (int i=0;i<m.length;i++){
-            System.out.println(m[i]);
-        }
-    }
-}
+import java.io.InputStream;
+import java.util.*;
+import java.lang.*;
 
 class pra3{
     public static void main(String args[]){
-        Integer m[]={1,2,3,4};
-        pra0<Integer> b=new pra0<Integer>(m);
-        b.print();
+        Scanner sc=new Scanner(System.in);
+        int m=sc.nextInt();
+        int n=sc.nextInt();
+        String s=sc.nextLine();
+        String s1=sc.nextLine();
+        String s2=sc.nextLine();
+        int c1=0,c2=0;
+        for (int i=0;i<s1.length();i++){
+            c1=c1+s1.charAt(i)-'a'+1;
+        }
+        for (int i=0;i<s2.length();i++){
+            c2=c2+s2.charAt(i)-'a'+1;
+        }
+        System.out.println(c1);
+        System.out.println(c2);
+        if (c1>c2){
+            System.out.println(c1);
+        }
+        else{
+            System.out.println(c2);
+        }
+        sc.close();
     }
 }

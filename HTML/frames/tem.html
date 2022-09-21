@@ -1,36 +1,39 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html> 
+<html> 
+<head> 
+ <title>trail6</title> 
+ <style> 
+ p,input,label{ 
+ text-align: center; 
+ font-size: 30px; 
+ } 
+ body{ 
+ background-color: darkgrey; 
+ } 
+ </style> 
+ <script> 
+ function myFunction(val) { 
+ alert("The input value has changed. The new value is: " + val); 
+ } 
+ </script> 
+</head> 
+<body> 
+ <center> 
+ <p>Modify the text in the input field, then click outside the field to fire the onchange 
+event.</p> 
+ <label>Enter some text: </label> 
+ <input type="text" name="txt" value="Hello" onchange="myFunction(this.value)"> 
+ <br><br> 
+ <p>Onfocus event in js ---- click ont he textfield</p> 
+ <label>Enter the text:</label> 
+ <input type="text" id="foc"
+onfocus="document.getElementById('foc').style.backgroundColor='green'"> 
+ <br><br> 
+ <p>on blur function --- click on the input and leave it to see the fuctionality</p> 
+ <label>Enter the text:</label> 
+ <input id="blr" type="text"
+onblur="document.getElementById('blr').style.backgroundColor='yellow'"> 
+</center> 
 
-    <head>
-        <title>
-            hyper
-        </title>
-        <style>
-            a{
-                TEXT-DECORATION:NONE;
-                font-family: 'Arimo', sans-serif;
-                
-            }
-            A:HOVER{
-                color: rgb(255, 255, 255);
-               
-                cursor: pointer;
-            }
-            body{
-                background-color: rgba(0, 255, 255, 0.278);
-            }
-        </style>
-    </head>
-
-   <body>
-    <fieldset><legend>TABLE OF CONTENTS</legend>
-    <ul type="square">
-        <li><a>VISION</a><BR><br></li>
-        <li><a>MISSION</a><br><br></li>
-        <li><a>COURSE OUTCOMES</a><br><br></li>
-        <li><a>COURSE OBJECTIVES</a></li>
-    </ul>
-</fieldset>
-   </body>
-	
-</html>
+</body> 
+</html> 

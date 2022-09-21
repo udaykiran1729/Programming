@@ -1,38 +1,51 @@
 <!DOCTYPE html>
 <html>
 
-<body style="background-color:rgb(181, 128, 243);">
-
-    <h2>JavaScript HTML DOM</h2>
-
-    <p>Hello World!</p>
-
-    <p>Hello Uday!</p>
-
-    <p>Click the button to change the color of all p elements.</p>
-    <a name="html">HTML Tutorial</a><br>
-    <a name="css">CSS Tutorial</a><br>
-    <a name="xml">XML Tutorial</a><br>
-    <p>The content of the first anchor in this document is:</p>
-    <p id="demo"></p>
-    <button onclick="myFunction()">Try it</button>
-    <button onclick="mFunction()">Change</button>
-    <script>
-        function myFunction() {
-            const myCollection = document.getElementsByTagName("p");
-            for (let i = 0; i < myCollection.length; i++) {
-                myCollection[i].style.color = "blue";
-            }
+<head>
+    <title>
+        first webpage
+    </title>
+    <style>
+        body{
+            background-color: green;
+            font-size: 50px;
+            
         }
-        function mFunction() {
-            const collection = document.body.children;
-            for (let i = 0; i < collection.length; i++) {
-                collection[i].style.backgroundColor = "red";
-            }
+        table,td,tr,th{
+            border-collapse: collapse;
+            padding: 10px;
+            border: 3px solid black;
         }
-        let content = document.getElementsByTagName("a")[0].innerHTML;
-        document.getElementById("demo").innerHTML = content;
-    </script>
+        
+    </style>
+</head>
+
+<body>
+    <!-- <table>
+        <tr>
+            <th rowspan="2">
+                name of train
+            </th>
+            <th rowspan="2">
+                place
+            </th>
+            <th rowspan="2">
+                destination
+            </th>
+            <th rowspan="2">
+                trian no
+            </th>
+            <th colspan="2">time</th>
+            <th>fare</th>
+        </tr>
+        <tr> 
+            <th rowspan="2">arrival</th>
+            <th>departure</th>
+        </tr>
+    </table> -->
+    <frameset rows="50%,50%">
+        <frame src="temp.html"></frame>
+    </frameset>
 
 </body>
 

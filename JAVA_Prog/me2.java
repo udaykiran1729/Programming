@@ -1,21 +1,22 @@
-import java.io.*;
+import java.lang.*;
+import java.util.*;
 
-class gc{
-    public int gcd(int a,int b){
-        int r=a%b;
-        if (r==0){
-            return b;
-        }
-        else{
-         return  gcd(b,r);
-        }
+public class me2 extends prac1{
+    static Scanner sc=new Scanner(System.in);
+    static String user;
+    static String pass;
+
+    
+
+    public static void main(String args[]){
+
+        System.out.println("enter the username");
+        user=sc.nextLine();
+        pass=sc.nextLine();
+        me2 m=new me2();
+        m.auth(user, pass);
+
     }
 }
 
-class me2{
-    public static void main(String args[]){
-        gc g=new gc();
-        int m=g.gcd(0,2);
-        System.out.println(m);
-}
 }

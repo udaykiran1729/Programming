@@ -1,41 +1,32 @@
-import java.io.FileInputStream;
+import java.lang.*;
+import java.util.*;
 
-class me extends Thread{
-    public void run(){
-        try{
-            FileInputStream f=new FileInputStream("prac1.java");
-            int i=0;
-            while((i=f.read())!=-1){
-            System.out.print((char)i);
-            Thread.sleep(100);
-            }
-            f.close();
-            }catch(Exception e){}
-    }
-}
+public class prac1{
 
-class mine extends Thread{
-    public void run(){
-        try{
-            FileInputStream f=new FileInputStream("me2.java");
-            int i=0;
-            while((i=f.read())!=-1){
-            System.out.print((char)i);
-            Thread.sleep(100);
-            }
-            f.close();
-            }catch(Exception e){}
+    protected String m[];
+    protected String n[];
+    int stage=0;
+    prac1(){
+        System.out.println("empty fields");
     }
-}
 
-class prac1{
-    public static void main(String args[]){
-        me m=new me();
-        mine f=new mine();
-        m.start();
-        try{
-            m.join();
-        }catch(Exception e){}
-        f.start();
+    public void auth(String user,String pass){
+        if (user.equals("uday")&&pass.equals("pass")){
+            System.out.println("correct credentials");
+        }
+        else{
+            System.out.println("incorrect credentails");
+        }
     }
+
+    public void store(String user,String pass){
+        m[stage]=user;
+        m[stage]=pass;
+        stage++;
+    }
+
+    public static void main(String[] args){
+
+    }
+
 }

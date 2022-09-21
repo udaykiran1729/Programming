@@ -17,14 +17,54 @@
 <html>
     <head>
         <title>right column</title>
+        <style>
+            @keyframes ani{
+                0%{
+                    top:0px;
+                    left: -250px;
+                    background: red;
+                }
+                25%{
+                    top: 0px;
+                    left: 250px;
+                    background: blue;
+
+                }
+                50%{
+                    top: 500px;
+                    left: 250px;
+                    background: orange;
+                }
+                75%{
+                    top: 500px;
+                    left: -250px;
+                    background: rgb(0, 0, 0);
+                }
+                100%{
+                    top:0px;
+                    left: -250px;
+                    background: red;
+                }
+            }
+            #i{
+                position: relative;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                border: 2px solid black;
+                animation-name: ani;
+                animation-iteration-count: infinite;
+                animation-duration: 5s;
+
+            }
+        </style>
     </head>
     
-        
-        <frameset cols="50%,50%">
-            <frame name="right" src="tem.html"></frame>
-            <frame name="below" src="tem.html"></frame>
-        <noframes>
-            <body>Your browser does not support frames.</body>
-         </noframes>
-        </frameset>
+    <body>
+        <center>
+        <div id="i">
+
+        </div>
+    </center>
+    </body>
 </html>

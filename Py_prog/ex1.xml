@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="ex.xsl" type="text/xsl"?>
+
+<student>
+    <s1>
+        <name>uday</name>
+        <reg>y20cs177</reg>
+    </s1>
+    <s1>
+        <name>jc</name>
+        <reg>y20cs178</reg>
+    </s1>
+</student>
+
+
+<!-- <?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="ex.xsl" type="text/xsl"?>
+
+
+<student>
+    <s1>
+        <name>uday kiran</name>
+        <regno>Y20CS177</regno>
+        <age>20</age>
+    </s1>
+    <s1>
+        <name>uday</name>
+        <regno>Y20CS178</regno>
+        <age>19</age>
+    </s1>
+    <s1>
+        <name>uday</name>
+        <regno>Y20CS178</regno>
+        <age>19</age>
+    </s1>
+</student> -->

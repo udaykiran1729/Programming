@@ -1,0 +1,240 @@
+<html>
+
+<head>
+    <title>
+        uday
+    </title>
+    <link rel='stylesheet' href="indx.css">
+    <style>
+        body {
+            background-color: aqua;
+            
+            letter-spacing: 2px;
+        }
+        table,th,td,tr{
+            border: 2px solid black;
+            border-collapse: collapse;
+            text-align: center;
+            padding: 10px;
+        }
+        #i-1{
+            position: relative;
+            z-index: 1;
+        }
+        #i-2{
+            z-index: 1;
+            position: relative;
+        }
+        
+    </style>
+    <script>
+        function chng(value) {
+            document.body.style.backgroundColor = value;
+            s=document.getElementById("mew").value;
+            document.getElementById("pa").innerHTML=s;
+            document.getElementById("mew").style.backgroundColor="blue";
+        }
+    </script>
+</head>
+
+<body>
+    <ul type="square">
+        <li>uday</li>
+        <li>kiran</li>
+    </ul>
+    <ol>
+        <li>uday</li>
+        <li>kiran</li>
+    </ol>
+    <table>
+        <tr>
+            <th >monday</th>
+            <th >tuesday</th>
+            <th>wednesday</th>
+        </tr>
+        <tr>
+            <td colspan="">l</td>
+            <td rowspan="3">a</td>
+            <td>w</td>
+        </tr>
+        <tr>
+            <td>l</td>
+            
+            <td>w</td>
+        </tr>
+        <tr>
+            <td>l</td>
+            
+            <td>w</td>
+        </tr>
+    </table>
+        <input type="radio" name="color" value="red" onclick="chng(value)">
+        <label for="color">Red</label><br>
+        <input type="radio" name="color" value="green" onclick="chng(value)">
+        <label for="color">Green</label><br>
+        <input type="radio" name="color" value="gold" onclick="chng(value)">
+        <label for="color">gold</label><br>
+        <input type="radio" name="color" value="black" onclick="chng(value)">
+        <label for="color">black</label>
+<br><br>
+    <img id="i-1" src="watch.jpg" alt="12345" width="300px">
+    <img id="i-2" src="watch.jpg" width="200px">
+<br>
+    <label>enter something</label>
+    <input type="text" name="uda" id="mew" onclick="document.geElementbyId('mew').style.backgroundColor='gold'">
+    <p id="pa"></p>
+
+
+
+
+    <h2>Bubbling Event in Javascript</h2>
+ 
+    <div id="parent">
+      <button>
+          <h2>Parent</h2>
+      </button>
+      <button id="child">
+           
+<p>Child</p>
+ 
+      </button>
+    </div><br>
+ 
+ 
+    <script>
+        document.getElementById(
+"child").addEventListener("click", function () {
+            alert("You clicked the Child element!");
+        }, false);
+ 
+        document.getElementById(
+"parent").addEventListener("click", function () {
+            alert("You clicked the parent element!");
+        }, false);
+    </script>
+</body>
+
+</html>
+
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        first webpage
+    </title>
+    <link rel="stylesheet" href="indx.css">
+    
+</head>
+
+<body >
+
+    <div id="header">
+        <a href="" style="font-size: 30px;letter-spacing: 2px;">logo</a>
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">Account</a></li>
+            <li><a href="">Help?</a></li>
+            <li><a href="">Sign Out</a></li>
+        </ul>
+    </div>
+    
+    <center>
+            <div class="left_container">
+
+                <p>somethin gsomething</p>
+
+            </div>
+            <div class="mid_container">
+                <fieldset class="fie_1">
+
+                    <div class="text_1">
+                        <span>
+                            In the film, following his escape from captivity by a terrorist group, world famous
+                            industrialist and
+                            master engineer Tony Stark builds a mechanized suit of armor and becomes the superhero Iron
+                            Man. Iron
+                            Man. Theatrical release poster. Directed by. Jon Favreau.
+
+                            In the film, following his escape from captivity by a terrorist group, world famous
+                            industrialist and
+                            master engineer Tony Stark builds a mechanized suit of armor and becomes the superhero Iron
+                            Man. Iron
+                            Man. Theatrical release poster. Directed by. Jon Favreau.
+
+                            In the film, following his escape from captivity by a terrorist group, world famous
+                            industrialist and
+                            master engineer Tony Stark builds a mechanized suit of armor and becomes the superhero Iron
+                            Man. Iron
+                            Man. Theatrical release poster. Directed by. Jon Favreau.
+                        </span>
+                    </div>
+                </fieldset>
+                <br><br>
+                <fieldset class="fie_1">
+
+                    <div class="text_1">
+                        <span>
+                            In the film, following his escape from captivity by a terrorist group, world famous
+                            industrialist and
+                            master engineer Tony Stark builds a mechanized suit of armor and becomes the superhero Iron
+                            Man. Iron
+                            Man. Theatrical release poster. Directed by. Jon Favreau.
+
+                            In the film, following his escape from captivity by a terrorist group, world famous
+                            industrialist and
+                            master engineer Tony Stark builds a mechanized suit of armor and becomes the superhero Iron
+                            Man. Iron
+                            Man. Theatrical release poster. Directed by. Jon Favreau.
+
+                            In the film, following his escape from captivity by a terrorist group, world famous
+                            industrialist and
+                            master engineer Tony Stark builds a mechanized suit of armor and becomes the superhero Iron
+                            Man. Iron
+                            Man. Theatrical release poster. Directed by. Jon Favreau.
+                        </span>
+                    </div>
+                </fieldset>
+                <br><br>
+                <fieldset class="fie_1">
+
+                    <div class="text_1">
+                        <span>
+                            In the film, following his escape from captivity by a terrorist group, world famous
+                            industrialist and
+                            master engineer Tony Stark builds a mechanized suit of armor and becomes the superhero Iron
+                            Man. Iron
+                            Man. Theatrical release poster. Directed by. Jon Favreau.
+
+                            In the film, following his escape from captivity by a terrorist group, world famous
+                            industrialist and
+                            master engineer Tony Stark builds a mechanized suit of armor and becomes the superhero Iron
+                            Man. Iron
+                            Man. Theatrical release poster. Directed by. Jon Favreau.
+
+                            In the film, following his escape from captivity by a terrorist group, world famous
+                            industrialist and
+                            master engineer Tony Stark builds a mechanized suit of armor and becomes the superhero Iron
+                            Man. Iron
+                            Man. Theatrical release poster. Directed by. Jon Favreau.
+                        </span>
+                    </div>
+                </fieldset>
+            </div>
+        
+        <div id="right_container">
+            <div class="opt" style="background-color:azure ;color:black">
+                <button>Click Here</button>
+            </div>
+            <div class="opt" style="background-color:azure ;color:black">
+                <button>Click Here</button>
+            </div>
+            <div class="opt" style="background-color:azure ;color:black">
+                <button>Click Here</button>
+            </div>
+        </div>
+    </center>
+
+</body>
+
+</html> -->

@@ -74,15 +74,43 @@ using namespace std;
 class complex{
   public:
   int re,im;
-  complex(int r,int i):re(r),im(i){}
+  complex(int r=0,int i=0):re(r),im(i){}
 
   void disp(){
     cout<<re<<"+i*"<<im<<endl;
 
   }
-};
+}a,b;
+
+complex operator +(complex a,complex b){
+  complex r;
+  r.re=a.re+b.re;
+  r.im=a.im+b.im;
+  return r;
+}
+
+complex operator -(complex a,complex b){
+  complex r;
+  r.re=a.re-b.re;
+  r.im=a.im-b.im;
+  return r;
+}
+
+complex operator +(complex a,int b){
+  complex r;
+  r.re=a.re+b;
+  r.im=a.im;
+  return r;
+}
 
 int main(){
-  complex d;
-  cin>>d.re>>d.im;
+  cout<<2;
+  // cout<<"Enter the complex number A : ";
+  // cin>>a.re>>a.im;
+  // cout<<"Enter the complex number B : ";
+  // cin>>b.re>>b.im;
+  // complex res;
+  // res=a+b;
+  // res.disp();
+  
 }

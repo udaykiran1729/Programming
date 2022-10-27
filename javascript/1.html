@@ -2,11 +2,109 @@
 
 <html>
     <head>
-        me
-    </head>
+        <title>me</title>
+    
+    <style>
+        #mov{
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            border-radius: 100px;
+            animation-name: ani;
+            animation-iteration-count: infinite;
+           
+            animation-duration: 5s;
+        }
+
+        @keyframes ani{
+            0%{
+                top:100px;
+                left:-200px;
+                background-color: antiquewhite;
+            }
+            25%{
+                top: 100px;
+                left: 200px;
+                background-color: azure;
+            }
+            50%{
+                top: 300px;
+                left: 200px;
+                background-color: tomato;
+            }
+            75%{
+                top:300px;
+               left: -200px;
+               background-color: brown;
+            }
+            100%{
+                top: 100px;
+                left: -200px;
+            }
+        }
+        table,td,th,tr{
+            border:2px solid black;
+            
+
+        }
+    </style>
+    <!-- <script type="module">
+        let m=prompt("enter the values","1,2,3..");
+        m=m.split(',');
+        let ma;
+        for (let i=0;i<m.length-1;i++){
+            ma=Math.max(m[i],m[i+1])
+        }
+        document.getElementById("pit").innerHTML="MAXIMUM : "+ma;
+    </script> -->
     <script src="prac.js"></script>
+</head>
     <body>
-        <p id="demo"></p>
-        <textarea onkeydown="print(event)">enter anything you want</textarea>
+        <center>
+        <!-- <div id="mov"></div> -->
+        
+        <table>
+            <tr>
+                <th>uday</th>
+                <th>kirann</th>
+                <th>uday</th>
+                <th>kirann</th>
+            </tr>
+            <tr>
+                <td>
+                    thummla
+                </td>
+                <td>uday</td>
+                <td>
+                    thummla
+                </td>
+                <td>uday</td>
+            </tr>
+            <tr>
+                <td>
+                    thummla
+                </td>
+                <td>uday</td>
+                <td>
+                    thummla
+                </td>
+                <td>uday</td>
+            </tr>
+        </table>
+        <form>
+            <label>ENter name:</label>
+            <input type="text"><br>
+            <label>emailo</label>
+            <input type="email"><br>
+            <button onclick="fun1()">click</button>
+            <select onselect="">
+                <option selected disabled>select</option>
+                <option value="red" onclick="fun(value)">red</option>
+                <option value="green" onselect="fun(value)">green</option>
+            </select>
+        </form>
+        <p id="pit"></p>
+    </center>
     </body>
 </html>

@@ -3,5 +3,6 @@
         "LAB2.1.C": "cpp",
         "PRAC.C": "cpp",
         "iostream": "cpp"
-    }
+    },
+    "python.analysis.typeCheckingMode": "basic"
 }

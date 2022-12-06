@@ -70,24 +70,60 @@
 #     else:
 #         print(key+"~"+Roll_name[key]+"~"+"0")
 
-from math import floor,sqrt
+# from math import floor,sqrt
 
-def conv(s):
-    c=0
-    for i in range(len(s)):
-        c+=int(s[i])*(2**i)
-    return c
+# def conv(s):
+#     c=0
+#     for i in range(len(s)):
+#         c+=int(s[i])*(2**i)
+#     return c
 
-for _ in range(int(input())):
-    n=int(input())
-    s=input()
-    m=conv(s)
-    y=0
-    ma=-1
-    for i in range(1,n+1):
-        re=m^(m/(2**i))
-        if re<ma:
-                ma=temp;
-                y=i
-        print(y)
+# for _ in range(int(input())):
+#     n=int(input())
+#     s=input()
+#     m=conv(s)
+#     y=0
+#     ma=-1
+#     for i in range(1,n+1):
+#         re=m^(m/(2**i))
+#         if re<ma:
+#                 ma=temp;
+#                 y=i
+#         print(y)
         
+
+l=[1,0,2,4,5,2,0,5,0]
+
+i,j=0,1
+le=len(l)
+# max1,max2=0,0
+
+# if l[0]>l[1]:
+#     max1=l[0]
+#     max2=l[1]
+# else:
+#     max1=l[1]
+#     max2=l[0]
+
+# for i in range(2,len(l)):
+
+#     if l[i]>max1:
+#         max2=max1
+#         max1=l[i]
+#     elif l[i]>max2 and l[i]<=max1:
+#         max2=l[i]
+
+
+
+while(i<le and j<le):
+    if l[i]==0:
+        t=l[i]
+        l[i]=l[j]
+        l[j]=t
+        i+=1
+        j+=1
+    else:
+        j+=1
+        i+=1
+    print(l)
+# print(l)

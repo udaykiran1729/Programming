@@ -189,72 +189,149 @@
 
 
 
-#include <stdio.h>
+// #include <stdio.h>
 
-// int arr[10];
+// // int arr[10];
 
 
 
-void merge(int a[],int l,int m,int h){
-	int l1=m-l+1;
-	int l2=h-m;
-	int a1[l1],a2[l2];
+// void merge(int a[],int l,int m,int h){
+// 	int l1=m-l+1;
+// 	int l2=h-m;
+// 	int a1[l1],a2[l2];
 
-	for (int i=0;i<l1;i++){
-		a1[i]=a[l+i];
-	}
-	for (int i=0;i<l2;i++){
-		a2[i]=a[m+1+i];
-	}
+// 	for (int i=0;i<l1;i++){
+// 		a1[i]=a[l+i];
+// 	}
+// 	for (int i=0;i<l2;i++){
+// 		a2[i]=a[m+1+i];
+// 	}
 
-	int i=0,j=0,k=l;
+// 	int i=0,j=0,k=l;
 	
-	while(i<l1 && j<l2){
-		if (a1[i]<a2[j]){
-			a[k++]=a1[i++];
-		}
-		else{
-			a[k++]=a2[j++];
-		}
+// 	while(i<l1 && j<l2){
+// 		if (a1[i]<a2[j]){
+// 			a[k++]=a1[i++];
+// 		}
+// 		else{
+// 			a[k++]=a2[j++];
+// 		}
 
+// 	}
+
+// 	while(i<l1){
+// 		a[k++]=a1[i++];
+// 	}
+// 	while(j<l2){
+// 		a[k++]=a2[j++];
+// 	}
+
+
+
+// 	for (int i=0;i<9;i++){
+// 		printf("%d ",a[i]);
+// 	}
+// 	printf("\n");
+
+// }
+
+// void mergesort(int a[],int low,int high){
+// 	if (low< high){
+// 		int mid=(low+high)/2;
+// 		mergesort(a,low,mid);
+// 		mergesort(a,mid+1,high);
+// 		merge(a,low,mid,high);
+// 	}
+// }
+
+
+// int main(){
+// 	int a[]={4,1,2,3,6,5,7,10,8};
+// 	for (int i=0;i<9;i++){
+// 		printf("%d ",a[i]);
+// 	}
+
+// 	mergesort(a,0,9);
+// 	printf("\n sorted array:\n");
+// 	for (int i=0;i<9;i++){
+// 		printf("%d ",a[i]);
+// 	}
+
+// }
+
+
+#include<stdio.h>
+#include<stdlib.h>
+
+struct node{
+	int val;
+	struct node *next;
+}*temp,*t;
+
+
+
+void create(struct node *head){
+	int le,n;
+	printf("enter the no of elements:");
+	scanf("%d",&le);
+	
+	for (int i=0;i<le;i++){
+		temp=(struct node*)malloc(sizeof(struct node));
+		printf("enter the element:");
+		scanf("%d",&n);
+		temp->val=n;
+		temp->next=NULL;
+		head->next=temp;
+		head=temp;
 	}
-
-	while(i<l1){
-		a[k++]=a1[i++];
-	}
-	while(j<l2){
-		a[k++]=a2[j++];
-	}
+	
+}
 
 
-
-	for (int i=0;i<9;i++){
-		printf("%d ",a[i]);
+void disp(struct node *p){
+	t=p;
+	while(t!=NULL){
+		printf("%d ",t->val);
+		t=t->next;
 	}
 	printf("\n");
-
 }
 
-void mergesort(int a[],int low,int high){
-	if (low< high){
-		int mid=(low+high)/2;
-		mergesort(a,low,mid);
-		mergesort(a,mid+1,high);
-		merge(a,low,mid,high);
-	}
-}
 
 
 int main(){
-	int a[]={4,1,2,3,6,5,7,10,8};
-	for (int i=0;i<9;i++){
-		printf("%d ",a[i]);
-	}
 
-	mergesort(a,0,9);
-	printf("\n sorted array:\n");
-	for (int i=0;i<9;i++){
-		printf("%d ",a[i]);
-	}
+	// struct node *h1=NULL;
+	// // struct node *t1=NULL;
+	// struct node *h2=NULL;
+	// // struct node *t2=NULL;
 
+	// struct node* a[10];
+	
+	// int n,l;
+	// h1=(struct node*)malloc(sizeof(struct node));
+	// h1->val=-1;
+	// h1->next=NULL;
+	// // t1=h1;
+	// h2=(struct node*)malloc(sizeof(struct node));
+	// h2->val=-1;
+	// h2->next=NULL;
+	// // t2=h2;
+	// create(h1);
+	// create(h2);
+	// a[0]=h1->next;
+	// a[1]=h2->next;
+	// for (int i=0;i<2;i++){
+	// 	disp(a[i]);
+	// }
+	// printf("%d",5/2);
+	int a=10,b=20;
+	swap(&a,&b);
+	printf("%d %d",a,b);
+}
+
+void swap(int *a,int *b){
+	int t=*a;
+	*a=*b;
+	*b=t;
 }

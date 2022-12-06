@@ -1,31 +1,20 @@
 import java.lang.*;
 import java.util.*;
 
-public class prac1{
+public class prac1 {
 
-    protected String m[];
-    protected String n[];
-    int stage=0;
-    prac1(){
-        System.out.println("empty fields");
-    }
+    public static void main(String[] args) {
 
-    public void auth(String user,String pass){
-        if (user.equals("uday")&&pass.equals("pass")){
-            System.out.println("correct credentials");
-        }
-        else{
-            System.out.println("incorrect credentails");
-        }
-    }
+        Timer t = new Timer();
 
-    public void store(String user,String pass){
-        m[stage]=user;
-        m[stage]=pass;
-        stage++;
-    }
+        t.scheduleAtFixedRate(
+                new TimerTask() {
+                    public void run() {
+                        System.out.println((int) (Math.random() * (9999 - 1000 + 1) + 1000));
+                    }
+                }, 0, 1000);
 
-    public static void main(String[] args){
+        System.out.println("out of the delusion");
 
     }
 

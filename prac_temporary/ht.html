@@ -1,40 +1,81 @@
+<!DOCTYPE html>
+
 <html>
     <head>
         <title>
-            My soft
+            proj
         </title>
+        <link rel="icon" href="watch.jpg">
         <style>
-            body{
-                background-image: url('https://www.bing.com/th?id=OIP.5SjKih2sQZ_ysAcRIOzJhgHaEo&w=316&h=197&c=8&rs=1&qlt=90&o=6&dpr=1.25&pid=3.1&rm=2');
-                background-repeat: no-repeat;
+            
+            fieldset{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                /* background-clip: padding-box; */
+                transform: translate(-50%, -50%);
+                width: 50%;
+                height: 50%;
+                background-color: rgba(255, 255, 255, 0.47);
+            }    
+
+            #inp,#inp1{
+                float: right;
+                display: flex;
+                flex-direction:column;
+                justify-content: flex-end;
+            }
+
+            #inp input{
+                border: 0px;
+                border-bottom: 1px solid rgb(255, 0, 0);
+                padding: 10px;
+                margin-top: 5px;
+            }
+            #ima{
+                float: left;
+                justify-content: center;
+                width: 50%;
+                left: 50%;
+            }
+            #ima button{
+                
+                width:100%;
+                margin: 10px;
+                background-color: aqua;
+            }
+            span{
+                background-image: url(watch.jpg);
                 background-size: cover;
             }
-            video{
-                padding: 20px;
-            }
-            audio{
-                padding: 20px;
-            }
-            h1{
-                text-align: center;
-            }
-            h2{
-                transition:5s;
+            body{
+                background-image: url(watch.jpg);
+                background-position: center;
+                background-size:auto;
+                
             }
         </style>
     </head>
     <body>
-    <h1>H<sub>2</sub>O</h1>
-    <ul type="circle">
-        <li>me</li>
-        <li>as</li>
-    </ul>
-    <h2>i am an idiot</h2>
-        <!-- <video width="320" height="240" controls >
-            <source src="http://rvrjc.ac.in/home_gallery/arialview.mp4" type="video/mp4">
-        </video><br>
-        <audio width="120" height="240" controls>
-            <source src="http://rvrjc.ac.in/home_gallery/arialview.mp4">
-        </audio> -->
+        <i class="fa fa-bars"></i>
+    <center>
+       <fieldset title="Sign in">
+        <div id="ima">
+            <div><span class="me"></span><button >Facebook</button></div>
+            <br>
+            <button>Instagram</button>
+        </div>
+        
+            <div id="inp">
+
+                <input type="text" placeholder="name"><br>
+                <input type="tel" placeholder="123-456-789"><br>
+                <input type="date" placeholder="Date">
+
+            </div>
+
+            
+       </fieldset>
+    </center>
     </body>
 </html>

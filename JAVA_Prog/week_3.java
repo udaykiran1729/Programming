@@ -1,20 +1,42 @@
-/*i.	Write a program for the following:  an inner class named Inner is defined within the scope of class Outer. Therefore, any code in class Inner can directly access the variable outer_x. An instance method named display( ) is defined inside Inner. This method displays outer_x on the standard output stream. The main( ) method of InnerClassDemo creates an instance of class Outer and invokes its test( ) method. That method creates an instance of class Inner and the display( ) method is called.
-*/
+import java.util.*;
+import java.lang.*;
 
 class week_3{
-    static int a=10;
-    class inner{
-        public void display(){
-            System.out.println(a);
-        }
-        
-    }
+    
     public static void main(String args[]){
-        week_3.inner i=new week_3.inner();
-        i.display();
-        new week_3().test();
+        int m,n;
+        Scanner sc=new Scanner(System.in);
+        m=sc.nextInt();
+        n=sc.nextInt();
+        int []a=new int[m+n];
+        int b[]=new int[n];
+        for(int i=0;i<m;i++){
+            a[i]=sc.nextInt();
+        }
+        for(int i=0;i<n;i++){
+            b[i]=sc.nextInt();
+        }
+        week_3 s=new week_3();
+        int res[]=s.merge(a,b,m,n);
+        
+        for(int i=0;i<m+n;i++){
+            System.out.print(res[i]+" ");
+        }
     }
-    public void test(){
-        System.out.println("test method called");
+
+    public int[] merge(int p[],int q[],int m,int n){
+        int i=m-1,j=n-1,k=m+n-1;
+        while(i>=0 && j>=0){
+            if (p[i]>q[j]){
+                p[k--]=p[i--];
+            }
+            else{
+                p[k--]=q[j--];
+            }
+        }
+        while(j>=0){
+            p[k--]=q[j--];
+        }
+        return p;
     }
 }

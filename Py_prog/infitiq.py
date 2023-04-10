@@ -1,75 +1,104 @@
-# import numpy as np
 
-# import matplotlib.pyplot as plt
+# def gcd(a, b):
+# 	if b==0:
+# 		return a
+# 	return gcd(b, a%b)
 
-# a=np.array([1,2,3])
-# b=np.array([4,5,6])
-
-# plt.plot(a,b,marker='.')
-# plt.show()
+# def Pour(toJugCap, fromJugCap, d):
 
 
-def merge(a,l,m,h):
-    l1=a[l:m]
-    l2=a[m:h]
 
-    i,j,k=0,0,l
+# 	fromJug = fromJugCap
+# 	toJug = 0
 
-    while i<len(l1) and j<len(l2):
-        if (l1[i]<l2[j]):
-            a[k]=l1[i]
-            i+=1
-        else:
-            a[k]=l2[j]
-            j+=1
-        k+=1
-    while i<len(l1):
-        a[k]=l1[i]
-        k+=1
-        i+=1
-    while j<len(l2):
-        a[k]=l2[j]
-        k+=1
-        j+=1
 
-# def mergesort(a,l,h):
-#     if (l<h):
-#         mid=(l+h)//2
-#         mergesort(a,l,mid)
-#         mergesort(a,mid+1,h)
-#         merge(a,l,mid,h)
+# 	step = 1
+# 	while ((fromJug is not d) and (toJug is not d)):
 
-def mergesort(a):
-    if len(a)>1:
-        mid=len(a)//2
-        l1=a[:mid]
-        l2=a[mid:]
-
-        mergesort(l1)
-        mergesort(l2)
-
-        i,j,k=0,0,0
-
-        while i<len(l1) and j<len(l2):
-            if (l1[i]<l2[j]):
-                a[k]=l1[i]
-                i+=1
-            else:
-                a[k]=l2[j]
-                j+=1
-            k+=1
-        while i<len(l1):
-            a[k]=l1[i]
-            k+=1
-            i+=1
-        while j<len(l2):
-            a[k]=l2[j]
-            k+=1
-            j+=1
         
+# 		temp = min(fromJug, toJugCap-toJug)
 
-a=[1,4,2,3,5,7,6,10,9]
 
-mergesort(a)
+# 		toJug = toJug + temp
+# 		fromJug = fromJug - temp
 
-print(a)
+# 		step = step + 1
+# 		if ((fromJug == d) or (toJug == d)):
+# 			break
+
+
+# 		if fromJug == 0:
+# 			fromJug = fromJugCap
+# 			step = step + 1
+
+
+# 		if toJug == toJugCap:
+# 			toJug = 0
+# 			step = step + 1
+			
+# 	return step
+
+
+# def minSteps(n, m, d):
+# 	if m> n:
+# 		m,n=n,m
+		
+# 	if (d%(gcd(n,m)) is not 0):
+# 		return -1
+	
+
+# 	return(min(Pour(n,m,d), Pour(m,n,d)))
+
+
+
+# n = 3
+# m = 5
+# d = 4
+
+# print('Minimum number of steps required is',
+# 							minSteps(n, m, d))
+	
+# This code is contributed by Sanket Badhe
+
+
+from math import gcd
+
+m=int(input())
+n=int(input())
+cap=int(input())
+
+
+def mins(m,n,cap):
+    if (m<n):
+        m,n=n,m
+    if (cap%gcd(m,n)!=0):
+        return -1
+    return min(find(m,n,cap),find(n,m,cap))
+
+
+def find(fromj,to,cap):
+    fro=fromj
+    t=0
+    c=1
+
+    while(fromj!=cap and to!=cap):
+
+        temp=min(fro,to-t)
+
+        t+=temp
+        fro-=temp
+        c+=1
+        if (fro==cap or t==cap):
+            break
+
+        if (fro==0):
+            fro=fromj
+            c+=1
+
+        if (t==to):
+            t=0
+            c+=1
+    return c
+
+
+print(mins(m,n,cap))

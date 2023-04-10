@@ -1,135 +1,49 @@
-// importing Java AWT class  
-/*import java.awt.*;    
-  
-public class aplet extends Frame {    
- 
-   aplet() {  
-  
-      // creating a button   
-      Button b = new Button("Click Me!!");  
-  
-      // setting button position on screen  
-      b.setBounds(30,100,80,30);  
-  
-      // adding button into frame    
-      add(b);  
-  
-      // frame size 300 width and 300 height    
-      setSize(1000,1000);  
-  
-      // setting the title of Frame  
-      setTitle("welco");   
-          
-      // no layout manager   
-      setLayout(null);   
-  
-      // now frame will be visible, by default it is not visible    
-      setVisible(true);  
-}    
+import java.util.ArrayList;
+import java.util.*;
+// import java.util.Collections;
+import java.lang.*;
 
-public static void main(String args[]) {   
-     
-aplet f = new aplet();    
-  
-}  
-  
-}  */
+public class aplet {
+        public static void main(String args[]){
+            int []m={4 ,1 ,3 ,9 ,7};
+            int l=5;
+            aplet ap=new aplet();
+            ap.merge(m, 0, l-1);
+            System.out.println(Arrays.toString(m));
+        }
 
-/*import java.util.*;
-
-import java.awt.*;
-
-class aplet extends Frame{
-    aplet(){
-
-        Button b=new Button("Register");
-        b.setBounds(30,100,80,30);
-        add(b);
-        setTitle("uday's applet");
-        setSize(1000,1000);
-        
-        setVisible(true);
-    }
-    public static void main(String args[]){
-        aplet f=new aplet();
-    }
-}*/
-
-/*
-import java.awt.*;    
-  
-// class AWTExample2 directly creates instance of Frame class  
-class aplet {    
-  
-   // initializing using constructor  
-   aplet() {  
-  
-      // creating a Frame  
-      Frame f = new Frame();  
-  
-      // creating a Label  
-      Label l = new Label("Employee id:");   
-  
-      // creating a Button  
-      Button b = new Button("Submit");  
-  
-      // creating a TextField  
-      TextField t = new TextField();  
-  
-      // setting position of above components in the frame  
-      l.setBounds(20, 80, 80, 30);  
-      t.setBounds(20, 100, 80, 30);  
-      b.setBounds(100, 100, 80, 30);  
-  
-      // adding components into frame    
-      f.add(b);  
-      f.add(l);  
-      f.add(t);  
-  
-      // frame size 300 width and 300 height    
-      f.setSize(400,300);  
-  
-      // setting the title of frame  
-      f.setTitle("Employee info");   
-          
-      // no layout  
-      f.setLayout(null);   
-  
-      // setting visibility of frame  
-      f.setVisible(true);  
-}    
-  
-// main method  
-public static void main(String args[]) {   
-  
-// creating instance of Frame class   
-aplet awt_obj = new aplet();    
-  
-}  
-  
-}    */
-
-
-import java.awt.*;
-
-//import javax.swing.plaf.metal.MetalBorders.TextFieldBorder;
-
-class aplet extends Frame{
-    aplet(){
-        Font f = new Font("Aerial Black",Font.BOLD,40);
-        Button b=new Button("Register");
-        //b.setColor("orange");
-        TextField t=new TextField("enter the name");
-        t.setBounds(30,100,80,20);
-        add(t);
-        
-        b.setBounds(500,500,80,30);
-        add(b);
-        setTitle("uday's applet");
-        setLayout(null);
-        setVisible(true);
-    }
-    public static void main(String args[]){
-        aplet a=new aplet();
-    }
+        public void merge(int a[],int l,int r){
+            aplet ap=new aplet();
+            if(l<r){
+                int mid=(l+r)/2;
+                ap.merge(a,l,mid);
+                ap.merge(a,mid+1,r);
+                ap.mergesort(a,l,mid,r);
+            }
+        }
+        public void mergesort(int a[],int l,int m,int r){
+            int l1=m-l+1,l2=r-m;
+            int [] a1=new int[l1];
+            int[] a2=new int[l2];
+            for(int i=0;i<l1;i++){
+                a1[i]=a[l+i];
+            }
+            for(int i=0;i<l2;i++){
+                a2[i]=a[m+1+i];
+            }
+            int i=0,j=0,k=l;
+            while(i<l1 && j<l2){
+                if (a1[i]>a2[j]){
+                    a[k++]=a2[j++];
+                }
+                else{
+                    a[k++]=a1[i++];
+                }
+            }
+            while(i<l1){
+                a[k++]=a1[i++];
+            }
+            while(j<l2)
+                a[k++]=a2[j++];
+        }
 }

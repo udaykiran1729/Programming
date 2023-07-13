@@ -1,13 +1,7 @@
-let m={
-    name:'uday',
-    rg_no:'177',
-    tu:890,
-    mine:{
-        n:12,
-        p:23,
-    }
-}
+const http=require ("http");
 
-for (let me in m.mine){
-    console.log(me,'',m.mine[me]);
-}
+http.createServer(function(req,res){
+    res.writeHeader(200,{'Content-type':'type/HTML'});
+    res.write("Hello Brooo");
+    res.end();
+}).listen(8080);

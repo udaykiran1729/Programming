@@ -1,21 +1,20 @@
 import java.util.*;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
-
+import java.lang.*;
 
 class some{
-
-    public static void main(String args[]) {
-        List<Integer> m=Arrays.asList(2,3,4,5);
-        // Stream<Integer> n=m.map(n->n*2);
-        
-        List<Integer> obj=m.stream().map(n->n*2).collect(Collectors.toList());
-
-        System.out.println(obj);
-        System.out.println(obj);
-        
-        // // t1.start();
-        // // t2.start();
+  public static void main(String args[]){
+    Scanner sc=new Scanner(System.in);
+    String s="Wipro Tecnologies";
+    String m[]=s.split(" ");
+    StringBuilder res=new StringBuilder();
+    for(String i:m){
+      StringBuilder temp=new StringBuilder();
+      for (char j:i.toCharArray()){
+        // res.append(j);
+        temp.insert(0, j);
+      }
+      res.append(temp+" ");
     }
-    
+    System.out.println(res.toString().trim());
+  }
 }

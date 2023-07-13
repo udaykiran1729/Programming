@@ -3,19 +3,22 @@
 <html>
     <head>
         <title>calculator</title>
+        <script>
+            function sendWhatsAppMessage() {
+  var phoneNumber = "9030883238"; // Replace with the desired phone number
+  var message = "Hello! This is a sample message."; // Replace with your desired message
+
+  var encodedMessage = encodeURIComponent(message);
+  var url = "https://wa.me/" + phoneNumber + "?text=" + encodedMessage;
+
+  window.open(url, "_blank");
+}
+
+
+        </script>
     </head>
 
     <body style="background-color:rgb(80, 231, 153);color:rgb(0, 0, 0)">
-        <h1><b>basic calculator</b></h1>
-
-        <br>
-
-        <input type="number" for="x"> enter the value of x<br><br>
-        <input type="number" for="y"> enter the value of y>
-        <code>
-            z=x+y;
-        </code>
-        <p><var>z</var></p>
-        <footer>uday kiran</footer>
+        <button onclick="sendWhatsAppMessage()">Send WhatsApp Message</button>
     </body>
 </html>
